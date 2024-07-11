@@ -1,0 +1,7 @@
+/Build
+*.3gx
+*.elf
+*.lst
+/.vscode
+/libctru
+/libctrpf-0.7.4

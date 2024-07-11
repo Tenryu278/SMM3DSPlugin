@@ -4,8 +4,9 @@
 > Can't running on citra
 
 # Build
-run command on Plugin directory
 ```
 make clean
 make
 ```
+
+This software is licensed under [MIT](LICENSE).

@@ -101,20 +101,6 @@ exit:
             MessageBox("", tid)();
         });
 
-        menu += new MenuEntry("Create", nullptr, [](MenuEntry *entry){
-            const std::string path = "Example.txt";
-            File::Create(path);
-            File *f  = new File();
-            
-            File::Open(*f, path, File::WRITE);
-            f->WriteLine("Hello 3gx!");
-            MessageBox("Done!")();
-            f->Close();
-            delete f;
-
-        });
-
-        menu += new MenuEntry("110","note");
 	}
 
     int main(void)

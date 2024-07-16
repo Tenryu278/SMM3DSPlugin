@@ -84,7 +84,7 @@ exit:
             "Set Score", 
             SMM3DS::KeepScore, 
             SMM3DS::InitScore,
-            "Press keyboard to change score\nCheck to keep score"
+            "Press keyboard to change score\nPress checkbox to keep score"
         );
 
         *folders[0] += new MenuEntry(
@@ -103,15 +103,15 @@ exit:
         *folders[1] += new MenuEntry(
             "MaxScore(Editor)", 
             SMM3DS::Editor_ScoreMax, 
-            "Set max score(" + std::to_string(SMM3DS::maxscore) + ") \nThis code can use only EditorMode."
+            "Keep max score(" + std::to_string(SMM3DS::maxscore) + ") \nThis code can use only EditorMode."
         );
 
         //Add folders
         for (size_t i = 0; i < folders.size(); i++)
             menu += folders[i];
         
-        //root
-        menu += new MenuEntry("Message", nullptr, [](MenuEntry *entry){
+        /*root*/
+        menu += new MenuEntry("Message", nullptr, [](MenuEntry *entry)->void {
             std::string tid;
             Process::GetTitleID(tid);
             MessageBox("", tid)();
@@ -129,12 +129,12 @@ exit:
 
         MenuFolder* play = new MenuFolder(
             "PlayingCodes", 
-            "These code valid when playing."
+            "These code are valid on playing."
         );
-
+        
         MenuFolder* editor = new MenuFolder(
             "EditorCodes", 
-            "These code valid when editor mode."
+            "These code are valid on editor mode."
         );
 
         std::vector<MenuFolder*> folders = {play, editor};

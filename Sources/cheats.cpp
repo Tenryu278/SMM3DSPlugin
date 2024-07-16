@@ -14,14 +14,13 @@ namespace CTRPluginFramework
 	void SMM3DS::InitScore(MenuEntry *entry)
 	{
 		std::vector<std::string> options(1);
-        Keyboard* k = new Keyboard(
-                "Enter Score \nMax:" + std::to_string(0xFFFFFFFF) + "\nMin:" + std::to_string(0), options);
+        Keyboard k("Enter Score \nMax:" + std::to_string(0xFFFFFFFF) + "\nMin:" + std::to_string(0), options);
         
 		//read current
 		Process::Read32(0x081C9B00, score);
-        k->Open(score, score);
+		
+        k.Open(score, score);
 		Process::Write32(0x081C9B00, score);
-		delete k;
 	}
 
 	void SMM3DS::KeepScore(MenuEntry *entry)

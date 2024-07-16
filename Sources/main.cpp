@@ -74,21 +74,37 @@ exit:
             return;
         
         /*[--play--]*/
-        *folders[0] += new MenuEntry("Keep MaxScore", SMM3DS::ScoreMax, 
-            "Keep max score(" + std::to_string(SMM3DS::maxscore) + ")");
+        *folders[0] += new MenuEntry(
+            "Keep MaxScore", 
+            SMM3DS::ScoreMax, 
+            "Keep max score(" + std::to_string(SMM3DS::maxscore) + ")"
+        );
 
         *folders[0] += new MenuEntry(
-            "Set Score", SMM3DS::KeepScore, SMM3DS::InitScore,"Press keyboard to change score\nCheck to keep score");
-
-        *folders[0] += new MenuEntry("Keep MaxTime", SMM3DS::TimeMax, 
-            "Keep max time(" + std::to_string(SMM3DS::maxtime) + ")");
+            "Set Score", 
+            SMM3DS::KeepScore, 
+            SMM3DS::InitScore,
+            "Press keyboard to change score\nCheck to keep score"
+        );
 
         *folders[0] += new MenuEntry(
-            "AutoJump", SMM3DS::AutoJump, "Mario always jumping while enable this code");
+            "Keep MaxTime", 
+            SMM3DS::TimeMax, 
+            "Keep max time(" + std::to_string(SMM3DS::maxtime) + ")"
+        );
+
+        *folders[0] += new MenuEntry(
+            "AutoJump", 
+            SMM3DS::AutoJump, 
+            "Mario always jumping while enable this code"
+        );
 
         /*[--editor--]*/
-        *folders[1] += new MenuEntry("MaxScore(Editor)", SMM3DS::Editor_ScoreMax, 
-            "Set max score(" + std::to_string(SMM3DS::maxscore) + ") \nThis code can use only EditorMode.");
+        *folders[1] += new MenuEntry(
+            "MaxScore(Editor)", 
+            SMM3DS::Editor_ScoreMax, 
+            "Set max score(" + std::to_string(SMM3DS::maxscore) + ") \nThis code can use only EditorMode."
+        );
 
         //Add folders
         for (size_t i = 0; i < folders.size(); i++)
@@ -111,8 +127,15 @@ exit:
         // Synchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
 
-        MenuFolder* play = new MenuFolder("PlayingCodes", "These code valid when playing.");
-        MenuFolder* editor = new MenuFolder("EditorCodes", "These code valid when editor mode.");
+        MenuFolder* play = new MenuFolder(
+            "PlayingCodes", 
+            "These code valid when playing."
+        );
+
+        MenuFolder* editor = new MenuFolder(
+            "EditorCodes", 
+            "These code valid when editor mode."
+        );
 
         std::vector<MenuFolder*> folders = {play, editor};
 

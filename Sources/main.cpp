@@ -94,6 +94,26 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            "Set Time", 
+            SMM3DS::KeepTime, 
+            SMM3DS::InitTime, 
+            "Press keyboard to change time\nPress checkbox to keep time"
+        );
+
+        *folders[0] += new MenuEntry(
+            Color::Yellow << "Keep Max Coin",
+            SMM3DS::CoinMax,
+            "Keep max coin(" + std::to_string(SMM3DS::maxcoin) + ")"
+        );
+
+        *folders[0] += new MenuEntry(
+            "Set Auto Scroll",
+            nullptr,
+            SMM3DS::SetAutoScroll,
+            "Set auto scroll.\nThis code is valid on both editor mode and play mode."
+        );
+
+        *folders[0] += new MenuEntry(
             "AutoJump", 
             SMM3DS::AutoJump, 
             "Mario always jumping while enable this code"
@@ -122,7 +142,10 @@ exit:
     int main(void)
     {
         PluginMenu* menu = new PluginMenu(
-            "SMM3DS v1.05", 0, 1, 0,"A plugin for SMM3DS(version1.05)");
+            "SMM3DS v1.05",
+             0, 1, 0,
+             "A plugin for SMM3DS(version1.05)"
+        );
 
         // Synchronize the menu with frame event
         menu->SynchronizeWithFrame(true);

@@ -19,21 +19,52 @@ namespace CTRPluginFramework
 		//visible max time
 		const static u16 maxtime = 999;
 
-		//Set and keep max score
+		//visible max coin
+		const static u8 maxcoin = 99;
+
+
+		/// @brief Set and keep max score
+		/// @param entry 
 		static void ScoreMax(CTRPluginFramework::MenuEntry *entry);
 
-		//Set score on keyboard
+
+		/// @brief Set score on keyboard
+		/// @param entry 
 		static void InitScore(CTRPluginFramework::MenuEntry *entry);
+
 
 		static void KeepScore(CTRPluginFramework::MenuEntry *entry);
 
-		//Set and keep max score on editor mode
+
+		/// @brief Set and keep max score on editor mode
+		/// @param entry 
 		static void Editor_ScoreMax(CTRPluginFramework::MenuEntry *entry);	
 
-		//Set and keep max time(999)
+
+		/// @brief Set and keep max time(999)
+		/// @param entry 
 		static void TimeMax(CTRPluginFramework::MenuEntry *entry);
 
-		//Mario always jumping while enable this code
+
+		/// @brief Set time on keyboard
+		/// @param entry 
+		static void InitTime(CTRPluginFramework::MenuEntry* entry);
+
+
+		static void KeepTime(CTRPluginFramework::MenuEntry* entry);
+
+		/// @brief Set and keep max coin
+		/// @param entry 
+		static void CoinMax(CTRPluginFramework::MenuEntry* entry);
+
+		/// @brief Set Auto Scroll.
+		///	This code is valid on both editor mode and play mode.
+		/// @param entry 
+		static void SetAutoScroll(CTRPluginFramework::MenuEntry* entry);
+
+
+		/// @brief Mario always jumping while enable this code
+		/// @param entry 
 		static void AutoJump(CTRPluginFramework::MenuEntry *entry);
 	};
 }

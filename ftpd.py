@@ -1,8 +1,17 @@
 from ftplib import FTP
 import os
 
-IP = "192.168.1.15"
-PORT = 5000
+# Read IP address and port from "IP_PORT.txt"
+
+# line1: Write your IP address
+# line2: Write your Port number
+# ---------Example---------
+# 192.168.1.15
+# 5000
+# -------------------------
+with(open("IP_PORT.txt")) as f:
+    IP = f.readline().strip('\n')
+    PORT = int(f.readline())
 
 tid = "00040000001A0300"
 

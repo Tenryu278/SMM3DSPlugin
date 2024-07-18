@@ -115,6 +115,13 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            Color::Yellow << "Set Coin",
+            SMM3DS::KeepCoin,
+            SMM3DS::InitCoin,
+            "Press keyboard to change coin\nPress checkbox to keep coin"
+        );
+
+        *folders[0] += new MenuEntry(
             "Set Auto Scroll",
             nullptr,
             SMM3DS::SetAutoScroll,

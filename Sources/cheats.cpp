@@ -68,6 +68,22 @@ namespace CTRPluginFramework
 		Process::Write8(0x081C9AF8, SMM3DS::maxcoin);
 	}
 
+	void SMM3DS::InitCoin(MenuEntry* entry)
+	{
+		Keyboard k("Enter Coin\nMax:" + std::to_string(0xFF) + "\nMin:" + std::to_string(0), {""});
+
+		Process::Read8(0x081C9AF8, coin);
+
+		int result = k.Open(coin, coin);
+		if (result != (int)DialogResult::Cancel && result != (int)DialogResult::SleepCancel)
+			Process::Write8(0x081C9AF8, coin);
+	}
+
+	void SMM3DS::KeepCoin(MenuEntry *entry)
+	{
+		Process::Write8(0x081C9AF8, coin);
+	}
+
 	void SMM3DS::SetAutoScroll(MenuEntry* entry)
 	{
 		const std::vector<std::string> speed = {

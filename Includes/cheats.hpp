@@ -63,6 +63,12 @@ namespace CTRPluginFramework
 		/// @param entry 
 		static void CoinMax(CTRPluginFramework::MenuEntry* entry);
 
+		/// @brief Set Coin on keyboard
+		/// @param entry 
+		static void InitCoin(CTRPluginFramework::MenuEntry* entry);
+
+		static void KeepCoin(CTRPluginFramework::MenuEntry *entry);
+
 		/// @brief Set Auto Scroll.
 		///	This code is valid on both editor mode and play mode.
 		/// @param entry 

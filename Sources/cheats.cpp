@@ -13,8 +13,7 @@ namespace CTRPluginFramework
 
 	void SMM3DS::InitScore(MenuEntry *entry)
 	{
-		std::vector<std::string> options(1);
-        Keyboard k("Enter Score \nMax:" + std::to_string(0xFFFFFFFF) + "\nMin:" + std::to_string(0), options);
+        Keyboard k("Enter Score \nMax:" + std::to_string(0xFFFFFFFF) + "\nMin:" + std::to_string(0), {""});
         
 		//read current
 		Process::Read32(0x081C9B00, score);
@@ -43,8 +42,7 @@ namespace CTRPluginFramework
 
 	void SMM3DS::InitTime(MenuEntry* entry)
 	{
-		std::vector<std::string> options(1);
-        Keyboard k("Enter Time \nMax:" + std::to_string(0xFFFF) + "\nMin:" + std::to_string(0), options);
+        Keyboard k("Enter Time \nMax:" + std::to_string(0xFFFF) + "\nMin:" + std::to_string(0), {""});
         
 		//read current
 		Process::Read16(0x310366B6, time);

@@ -18,8 +18,10 @@ namespace CTRPluginFramework
 		//read current
 		Process::Read32(0x081C9B00, score);
 		
-        k.Open(score, score);
-		Process::Write32(0x081C9B00, score);
+        int result = k.Open(score, score);
+
+		if (result != (int)DialogResult::Cancel && result != (int)DialogResult::SleepCancel)
+			Process::Write32(0x081C9B00, score);
 	}
 
 	void SMM3DS::KeepScore(MenuEntry *entry)
@@ -47,8 +49,10 @@ namespace CTRPluginFramework
 		//read current
 		Process::Read16(0x310366B6, time);
 
-		k.Open(time, time + 1);
-		Process::Write16(0x310366B6, time - 1);
+		int result = k.Open(time, time + 1);
+
+		if (result != (int)DialogResult::Cancel && result != (int)DialogResult::SleepCancel)
+			Process::Write16(0x310366B6, time - 1);
 	}
 
 	void SMM3DS::KeepTime(MenuEntry* entry)
@@ -81,7 +85,7 @@ namespace CTRPluginFramework
 
 		int result = k.Open();
 
-		if (result != -1 && result != -2)
+		if (result != (int)DialogResult::Cancel && result != (int)DialogResult::SleepCancel)
 		{
 			Process::Write8(0x304CB9BA, result); //MainWorld
 			Process::Write8(0x304EABFE, result); //SubWorld

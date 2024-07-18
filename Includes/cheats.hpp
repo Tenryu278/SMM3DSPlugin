@@ -7,6 +7,12 @@
 
 namespace CTRPluginFramework
 {
+	enum class DialogResult
+	{
+		Cancel = -1,
+		SleepCancel = -2
+	};
+
 	class SMM3DS
 	{
 	public:

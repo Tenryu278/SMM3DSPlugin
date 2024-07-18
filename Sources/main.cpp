@@ -72,6 +72,14 @@ exit:
 	{   
         if (folders.size() != 2)
             return;
+
+        //Add folders
+        for (size_t i = 0; i < folders.size(); i++)
+        {
+            if (folders[i] == nullptr)
+                return;
+            menu += folders[i];
+        }
         
         /*[--play--]*/
         *folders[0] += new MenuEntry(
@@ -125,10 +133,6 @@ exit:
             SMM3DS::Editor_ScoreMax, 
             "Keep max score(" + std::to_string(SMM3DS::maxscore) + ") \nThis code can use only EditorMode."
         );
-
-        //Add folders
-        for (size_t i = 0; i < folders.size(); i++)
-            menu += folders[i];
         
         /*root*/
         menu += new MenuEntry("Message", nullptr, [](MenuEntry *entry)->void {

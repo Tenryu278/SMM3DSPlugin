@@ -83,12 +83,6 @@ exit:
         
         /*[--play--]*/
         *folders[0] += new MenuEntry(
-            "Keep MaxScore", 
-            SMM3DS::ScoreMax, 
-            "Keep max score(" + std::to_string(SMM3DS::maxscore) + ")"
-        );
-
-        *folders[0] += new MenuEntry(
             "Set Score", 
             SMM3DS::KeepScore, 
             SMM3DS::InitScore,
@@ -96,22 +90,10 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
-            "Keep MaxTime", 
-            SMM3DS::TimeMax, 
-            "Keep max time(" + std::to_string(SMM3DS::maxtime) + ")"
-        );
-
-        *folders[0] += new MenuEntry(
             "Set Time", 
             SMM3DS::KeepTime, 
             SMM3DS::InitTime, 
             "Press keyboard to change time\nPress checkbox to keep time"
-        );
-
-        *folders[0] += new MenuEntry(
-            Color::Yellow << "Keep Max Coin",
-            SMM3DS::CoinMax,
-            "Keep max coin(" + std::to_string(SMM3DS::maxcoin) + ")"
         );
 
         *folders[0] += new MenuEntry(

@@ -29,45 +29,31 @@ namespace CTRPluginFramework
 		const static u8 maxcoin = 99;
 
 
-		/// @brief Set and keep max score
-		/// @param entry 
-		static void ScoreMax(CTRPluginFramework::MenuEntry *entry);
-
-
 		/// @brief Set score on keyboard
 		/// @param entry 
 		static void InitScore(CTRPluginFramework::MenuEntry *entry);
-
 
 		static void KeepScore(CTRPluginFramework::MenuEntry *entry);
 
 
 		/// @brief Set and keep max score on editor mode
 		/// @param entry 
-		static void Editor_ScoreMax(CTRPluginFramework::MenuEntry *entry);	
-
-
-		/// @brief Set and keep max time(999)
-		/// @param entry 
-		static void TimeMax(CTRPluginFramework::MenuEntry *entry);
+		static void Editor_ScoreMax(CTRPluginFramework::MenuEntry *entry);
 
 
 		/// @brief Set time on keyboard
 		/// @param entry 
 		static void InitTime(CTRPluginFramework::MenuEntry* entry);
 
-
 		static void KeepTime(CTRPluginFramework::MenuEntry* entry);
 
-		/// @brief Set and keep max coin
-		/// @param entry 
-		static void CoinMax(CTRPluginFramework::MenuEntry* entry);
 
 		/// @brief Set Coin on keyboard
 		/// @param entry 
 		static void InitCoin(CTRPluginFramework::MenuEntry* entry);
 
 		static void KeepCoin(CTRPluginFramework::MenuEntry *entry);
+
 
 		/// @brief Set Auto Scroll.
 		///	This code is valid on both editor mode and play mode.

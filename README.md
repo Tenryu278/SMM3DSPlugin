@@ -1,7 +1,6 @@
 # Super Mario Maker for Nintendo 3DS (v1.0.5) Plugin
 
 
-> Can't running on citra
 
 # [ftpd.py](ftpd.py)
 This file is use for install plugin to 3ds via [ftpd](https://github.com/mtheall/ftpd). 

@@ -27,17 +27,22 @@ with FTP() as ftpd:
         ftpd.cwd(plg_dir)
 
         dlist = ftpd.nlst(".")
-        for dir in dlist: 
-            if(os.path.basename(dir) == tid): #if exist, rmd
-                ftpd.cwd(tid)
-                flist = ftpd.nlst(".")
-                for f in flist:
-                    ftpd.delete(f)
+        for di in range(len(dlist)): 
+            dlist[di] = os.path.basename(dlist[di])
+        
+        if(tid in dlist):
+            ftpd.cwd(tid)
+            flist = ftpd.nlst(".")
+            if(plg_name in flist):
+                ftpd.delete(plg_name)
+            if("CTRPFData.bin" in flist):
+                ftpd.delete("CTRPFData.bin")
                 
-                ftpd.cwd(plg_dir)
-                ftpd.rmd(tid)
-    
-        ftpd.mkd(tid)
+            ftpd.cwd("..")
+
+        else:
+            ftpd.mkd(tid)
+        
         ftpd.cwd(tid)
 
         with open(plg_name, "rb") as plg:

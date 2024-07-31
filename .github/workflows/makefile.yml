@@ -3,8 +3,20 @@ name: Makefile CI
 on:
   push:
     branches: [ master ]
+    paths:
+      - '**.cpp'
+      - '**.hpp'
+      - '**.c'
+      - '**.h'
+      - '.github/workflows/**'
   pull_request:
     branches: [ master ]
+    paths:
+      - '**.cpp'
+      - '**.hpp'
+      - '**.c'
+      - '**.h'
+      - '.github/workflows/**'
 
 jobs:
   build:

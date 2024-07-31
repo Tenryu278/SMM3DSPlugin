@@ -108,6 +108,12 @@ namespace CTRPluginFramework
 		}
 	}
 
+	void SMM3DS::EnableScrollUp(MenuEntry* entry)
+	{
+		Process::Write8(0x304CB9BB, 0); //Mainworld
+		Process::Write8(0x304EABFF, 0); //SubWorld
+	}
+
 	void SMM3DS::AutoJump(MenuEntry *entry)
 	{
 		Process::Write32(0x317B9DEC, 0x317D7820);

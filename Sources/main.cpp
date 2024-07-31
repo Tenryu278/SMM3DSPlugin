@@ -111,6 +111,11 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            "Enable Scrolling UP",
+            SMM3DS::EnableScrollUp
+        );
+
+        *folders[0] += new MenuEntry(
             "AutoJump", 
             SMM3DS::AutoJump, 
             "Mario always jumping while enable this code"

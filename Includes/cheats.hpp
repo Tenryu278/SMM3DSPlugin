@@ -61,6 +61,11 @@ namespace CTRPluginFramework
 		static void SetAutoScroll(CTRPluginFramework::MenuEntry* entry);
 
 
+		/// @brief Enable Scrolling Up
+		/// @param entry 
+		static void EnableScrollUp(CTRPluginFramework::MenuEntry* entry);
+
+
 		/// @brief Mario always jumping while enable this code
 		/// @param entry 
 		static void AutoJump(CTRPluginFramework::MenuEntry *entry);

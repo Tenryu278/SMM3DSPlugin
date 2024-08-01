@@ -66,6 +66,11 @@ namespace CTRPluginFramework
 		static void EnableScrollUp(CTRPluginFramework::MenuEntry* entry);
 
 
+		/// @brief Set Scene Skin
+		/// @param entry 
+		static void SetSceneSkin(CTRPluginFramework::MenuEntry* entry);
+
+
 		/// @brief Mario always jumping while enable this code
 		/// @param entry 
 		static void AutoJump(CTRPluginFramework::MenuEntry *entry);

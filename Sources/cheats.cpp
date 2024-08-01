@@ -114,6 +114,31 @@ namespace CTRPluginFramework
 		Process::Write8(0x304EABFF, 0); //SubWorld
 	}
 
+	void SMM3DS::SetSceneSkin(MenuEntry* entry)
+	{
+		const std::vector<std::string> SceneSkins = {
+			"Ground",
+			"UnderGround",
+			"Castle",
+			"AirShip",
+			"UnderWater",
+			"Mansion"
+		};
+		u8 current;
+		Process::Read8(0x305A1000, current);
+
+		Keyboard k("Select Scene Skin to set... \nCurrent:" + SceneSkins[current], SceneSkins);
+		int result = k.Open();
+
+		if (result >= 0)
+		{
+			Process::Write8(0x305A1000, result); //Current
+			Process::Write8(0x305AC504, result); //MainWorld
+			Process::Write8(0x305AC508, result); //SubWorld
+		}
+		
+	}
+
 	void SMM3DS::AutoJump(MenuEntry *entry)
 	{
 		Process::Write32(0x317B9DEC, 0x317D7820);

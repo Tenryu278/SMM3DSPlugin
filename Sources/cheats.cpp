@@ -15,7 +15,7 @@ namespace CTRPluginFramework
 		
         int result = k.Open(score, score);
 
-		if (result != (int)DialogResult::Cancel && result != (int)DialogResult::SleepCancel)
+		if (result >= 0)
 		{
 			if (score > SMM3DS::maxscore)
 				score = SMM3DS::maxscore;
@@ -46,7 +46,7 @@ namespace CTRPluginFramework
 
 		int result = k.Open(time, time + 1);
 
-		if (result != (int)DialogResult::Cancel && result != (int)DialogResult::SleepCancel)
+		if (result >= 0)
 		{
 			if (time > SMM3DS::maxtime)
 				time = SMM3DS::maxtime;
@@ -70,7 +70,7 @@ namespace CTRPluginFramework
 		Process::Read8(0x081C9AF8, coin);
 
 		int result = k.Open(coin, coin);
-		if (result != (int)DialogResult::Cancel && result != (int)DialogResult::SleepCancel)
+		if (result >= 0)
 		{
 			if (coin > SMM3DS::maxcoin)
 				coin = SMM3DS::maxcoin;
@@ -101,7 +101,7 @@ namespace CTRPluginFramework
 
 		int result = k.Open();
 
-		if (result != (int)DialogResult::Cancel && result != (int)DialogResult::SleepCancel)
+		if (result >= 0)
 		{
 			Process::Write8(0x304CB9BA, result); //MainWorld
 			Process::Write8(0x304EABFE, result); //SubWorld

@@ -136,11 +136,6 @@ exit:
         );
         
         /*root*/
-        menu += new MenuEntry("Message", nullptr, [](MenuEntry *entry)->void {
-            std::string tid;
-            Process::GetTitleID(tid);
-            MessageBox("", tid)();
-        });
 
 	}
 

@@ -30,50 +30,50 @@ namespace CTRPluginFramework
 
 
 		/// @brief Set score on keyboard
-		/// @param entry 
-		static void InitScore(CTRPluginFramework::MenuEntry *entry);
+		/// @param 
+		static void InitScore(CTRPluginFramework::MenuEntry*);
 
-		static void KeepScore(CTRPluginFramework::MenuEntry *entry);
+		static void KeepScore(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set and keep max score on editor mode
-		/// @param entry 
-		static void Editor_ScoreMax(CTRPluginFramework::MenuEntry *entry);
+		/// @param 
+		static void Editor_ScoreMax(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set time on keyboard
-		/// @param entry 
-		static void InitTime(CTRPluginFramework::MenuEntry* entry);
+		/// @param 
+		static void InitTime(CTRPluginFramework::MenuEntry*);
 
-		static void KeepTime(CTRPluginFramework::MenuEntry* entry);
+		static void KeepTime(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set Coin on keyboard
-		/// @param entry 
-		static void InitCoin(CTRPluginFramework::MenuEntry* entry);
+		/// @param 
+		static void InitCoin(CTRPluginFramework::MenuEntry*);
 
-		static void KeepCoin(CTRPluginFramework::MenuEntry *entry);
+		static void KeepCoin(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set Auto Scroll.
 		///	This code is valid on both editor mode and play mode.
-		/// @param entry 
-		static void SetAutoScroll(CTRPluginFramework::MenuEntry* entry);
+		/// @param 
+		static void SetAutoScroll(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Enable Scrolling Up
-		/// @param entry 
-		static void EnableScrollUp(CTRPluginFramework::MenuEntry* entry);
+		/// @param 
+		static void EnableScrollUp(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set Scene Skin
-		/// @param entry 
-		static void SetSceneSkin(CTRPluginFramework::MenuEntry* entry);
+		/// @param  
+		static void SetSceneSkin(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Mario always jumping while enable this code
-		/// @param entry 
-		static void AutoJump(CTRPluginFramework::MenuEntry *entry);
+		/// @param  
+		static void AutoJump(CTRPluginFramework::MenuEntry*);
 	};
 }
 #endif

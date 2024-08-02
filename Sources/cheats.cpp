@@ -117,12 +117,12 @@ namespace CTRPluginFramework
 	void SMM3DS::SetSceneSkin(MenuEntry* entry)
 	{
 		const std::vector<std::string> SceneSkins = {
-			"Ground",
-			"UnderGround",
-			"Castle",
-			"AirShip",
-			"UnderWater",
-			"Mansion"
+			Color::Green << "Ground",
+			Color::Gray << "UnderGround",
+			Color::Red << "Castle",
+			Color::Cyan << "AirShip",
+			Color::Blue << "UnderWater",
+			Color::White << "Mansion"
 		};
 		u8 current;
 		Process::Read8(0x305A1000, current);

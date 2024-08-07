@@ -74,6 +74,14 @@ namespace CTRPluginFramework
 		/// @brief Mario always jumping while enable this code
 		/// @param  
 		static void AutoJump(CTRPluginFramework::MenuEntry*);
+
+	private:
+		/// @brief Select Scene Skin on keyboard
+		/// @param result Reurns selected. 
+		///	If not selected, returns -1 (cancel) or -2 (cancel bacause sleeping).
+		/// @param current Current Scene Skin. Defalt is Ground.
+		/// @return True is success, False is none
+		static bool _SetSceneSkin(u8 &result, const u8 &current = 0);
 	};
 }
 #endif

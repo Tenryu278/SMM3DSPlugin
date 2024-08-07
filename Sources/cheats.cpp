@@ -116,21 +116,11 @@ namespace CTRPluginFramework
 
 	void SMM3DS::SetSceneSkin(MenuEntry*)
 	{
-		const std::vector<std::string> SceneSkins = {
-			Color::Green << "Ground",
-			Color::Gray << "UnderGround",
-			Color::Red << "Castle",
-			Color::Cyan << "AirShip",
-			Color::Blue << "UnderWater",
-			Color::White << "Mansion"
-		};
 		u8 current;
+		u8 result;
 		Process::Read8(0x305A1000, current);
 
-		Keyboard k("Select Scene Skin to set... \nCurrent:" + SceneSkins[current], SceneSkins);
-		int result = k.Open();
-
-		if (result >= 0)
+		if (_SetSceneSkin(result, current))
 		{
 			Process::Write8(0x305A1000, result); //Current
 			Process::Write8(0x305AC504, result); //MainWorld
@@ -144,5 +134,23 @@ namespace CTRPluginFramework
 		Process::Write32(0x317B9DEC, 0x317D7820);
 	}
 
+	bool SMM3DS::_SetSceneSkin(u8 &result, const u8 &current)
+	{
+		const std::vector<std::string> SceneSkins = {
+			Color::Green << "Ground",
+			Color::Gray << "UnderGround",
+			Color::Red << "Castle",
+			Color::Cyan << "AirShip",
+			Color::Blue << "UnderWater",
+			Color::White << "Mansion"
+		};
+
+		Keyboard k("Select Scene Skin to set... \nCurrent:" + SceneSkins[current], SceneSkins);
+		result = k.Open();
+		if ((s8)result < 0)
+			return false;
+		
+		return true;
+	}
 	
 }

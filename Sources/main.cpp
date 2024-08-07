@@ -123,6 +123,13 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            "Change footsteps",
+            SMM3DS::KeepFootSteps,
+            SMM3DS::SetFootSteps,
+            "Change footstep sounds\nPress checkbox to keep that"
+        );
+
+        *folders[0] += new MenuEntry(
             "AutoJump", 
             SMM3DS::AutoJump, 
             "Mario always jumping while enable this code"

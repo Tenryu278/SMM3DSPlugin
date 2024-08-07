@@ -129,6 +129,28 @@ namespace CTRPluginFramework
 		
 	}
 
+	u8 footsteps;
+
+	void SMM3DS::SetFootSteps(MenuEntry*)
+	{
+		u8 current;
+		u8 result;
+		Process::Read8(0x007ACF3C, current);
+
+		if (_SetSceneSkin(result, current))
+		{
+			footsteps = result;
+		}
+	}
+
+	void SMM3DS::KeepFootSteps(MenuEntry*)
+	{
+		if (footsteps >= 0 && footsteps <= 5)
+		{
+			Process::Write8(0x007ACF3C, footsteps);
+		}
+	}
+
 	void SMM3DS::AutoJump(MenuEntry*)
 	{
 		Process::Write32(0x317B9DEC, 0x317D7820);

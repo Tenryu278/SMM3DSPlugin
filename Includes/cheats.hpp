@@ -71,6 +71,15 @@ namespace CTRPluginFramework
 		static void SetSceneSkin(CTRPluginFramework::MenuEntry*);
 
 
+		/// @brief Set FootSteps
+		/// @param  
+		static void SetFootSteps(CTRPluginFramework::MenuEntry*);
+
+		/// @brief Keep FootSteps
+		/// @param  
+		static void KeepFootSteps(CTRPluginFramework::MenuEntry*);
+
+
 		/// @brief Mario always jumping while enable this code
 		/// @param  
 		static void AutoJump(CTRPluginFramework::MenuEntry*);

@@ -17,6 +17,8 @@ BUILD		:= 	Build
 INCLUDES	:= 	Includes
 SOURCES 	:= 	Sources
 
+PLGDIR := luma/plugins/00040000001A0300
+
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
@@ -61,7 +63,7 @@ export INCLUDE	:=	$(foreach dir,$(INCLUDES),-I $(CURDIR)/$(dir) ) \
 
 export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L $(dir)/lib)
 
-.PHONY: $(BUILD) clean all
+.PHONY: $(BUILD) clean all to_citra
 
 #---------------------------------------------------------------------------------
 all: $(BUILD)
@@ -74,6 +76,11 @@ $(BUILD):
 clean:
 	@echo clean ... 
 	@rm -fr $(BUILD) $(OUTPUT).3gx $(OUTPUT).elf
+#---------------------------------------------------------------------------------
+to_citra:
+	@echo install to Citra ...
+	@cp -f SMM3DSPlugin.3gx $(HOME)/APPDATA/Roaming/Citra/sdmc/$(PLGDIR)/SMM3DSPlugin.3gx
+	@rm -f $(HOME)/APPDATA/Roaming/Citra/sdmc/$(PLGDIR)/CTRPFData.bin
 #---------------------------------------------------------------------------------
 else
 

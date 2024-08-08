@@ -17,7 +17,7 @@
         {
             "label": "build and install Citra",
             "type": "shell",
-            "command": "make clean\n\r make\n\r copy ${workspaceFolderBasename}.3gx ${env:APPDATA}/Citra/sdmc/luma/plugins/00040000001A0300/${workspaceFolderBasename}.3gx",
+            "command": "make clean\n\r make\n\r make to_citra",
             "args": [],
             "group": "build",
             "presentation": {

@@ -131,11 +131,14 @@ namespace CTRPluginFramework
 
 	u8 footsteps;
 
-	void SMM3DS::SetFootSteps(MenuEntry*)
+	void SMM3DS::SetFootSteps(MenuEntry* entry)
 	{
 		u8 current;
 		u8 result;
-		Process::Read8(0x007ACF3C, current);
+		if (entry->IsActivated())
+			current = footsteps;
+		else
+			Process::Read8(0x007ACF3C, current);
 
 		if (_SetSceneSkin(result, current))
 		{

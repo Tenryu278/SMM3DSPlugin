@@ -79,7 +79,7 @@ clean:
 #---------------------------------------------------------------------------------
 to_citra:
 	@echo install to Citra ...
-	@cp -f SMM3DSPlugin.3gx $(HOME)/APPDATA/Roaming/Citra/sdmc/$(PLGDIR)/SMM3DSPlugin.3gx
+	@cp -f SMM3DSPlugin.3gx $(HOME)/APPDATA/Roaming/Citra/sdmc/$(PLGDIR)/$(TARGET).3gx
 	@rm -f $(HOME)/APPDATA/Roaming/Citra/sdmc/$(PLGDIR)/CTRPFData.bin
 #---------------------------------------------------------------------------------
 else

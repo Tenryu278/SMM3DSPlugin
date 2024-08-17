@@ -126,7 +126,7 @@ exit:
             "Change footsteps",
             SMM3DS::KeepFootSteps,
             SMM3DS::SetFootSteps,
-            "Change footstep sounds\nPress checkbox to keep that"
+            "Change footstep sounds\nPress checkbox to keep\nThis code is valid on both editor mode and play mode."
         );
 
         *folders[0] += new MenuEntry(

@@ -154,6 +154,36 @@ namespace CTRPluginFramework
 		}
 	}
 
+	s8 lives = 0;
+
+	void SMM3DS::InitLives(MenuEntry*)
+	{
+		u8 current = 0;
+		Process::Read8(0x081C9B04, current);
+		if (current <= 128)
+			current++;
+
+		char msg[64] = {};
+		sprintf(msg, "Enter lives \nMax:%d \nMin:%d \nCurrent:%d", 128, INT8_MIN, (s8)current);
+		
+		Keyboard k(msg);
+		k.IsHexadecimal(false);
+
+		if (k.Open(current, current) == 0)
+		{
+			if (current <= 128)
+				current--;
+			
+			lives = (s8)current;
+			Process::Write8(0x081C9B04, (u8)lives);
+		}
+	}
+
+	void SMM3DS::KeepLives(MenuEntry*)
+	{
+		Process::Write8(0x081C9B04, (u8)lives);
+	}
+
 	void SMM3DS::AutoJump(MenuEntry*)
 	{
 		Process::Write32(0x317B9DEC, 0x317D7820);

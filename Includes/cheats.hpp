@@ -80,6 +80,16 @@ namespace CTRPluginFramework
 		static void KeepFootSteps(CTRPluginFramework::MenuEntry*);
 
 
+		/// @brief Set Mario's lives on Keyboard. Use Super mario challenge
+		/// @param  
+		static void InitLives(CTRPluginFramework::MenuEntry*);
+
+
+		/// @brief Keep Mario's lives
+		/// @param  
+		static void KeepLives(CTRPluginFramework::MenuEntry*);
+
+
 		/// @brief Mario always jumping while enable this code
 		/// @param  
 		static void AutoJump(CTRPluginFramework::MenuEntry*);

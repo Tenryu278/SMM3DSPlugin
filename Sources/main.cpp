@@ -130,6 +130,14 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            "Set Mario's lives",
+            SMM3DS::KeepLives,
+            SMM3DS::InitLives,
+            "Press keyboard to change lives\nPress checkbox to keep lives\n"+
+            (Color::Blue<<"Note: If you lives is below 0, you'll be GameOver when quit cource")
+        );
+
+        *folders[0] += new MenuEntry(
             "AutoJump", 
             SMM3DS::AutoJump, 
             "Mario always jumping while enable this code"

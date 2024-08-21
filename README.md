@@ -10,16 +10,16 @@ This plugin only runs on Super Mario Maker for Nintendo 3DS.
 > You need a hacked 3ds console. See more [3ds Hacks Guide](https://3ds.hacks.guide/).
 
 ## For 3DS
-Open your SD card and copy built 3gx file to **luma/Plugins/{TitleID}[^1]**.
+Open your SD card and copy built 3gx file to `sdmc/luma/Plugins/{TitleID}`.
 
 ## For [Citra](https://github.com/PabloMK7/citra)
-Launch to click **Open Citra Folder** from File tab and copy built 3gx file to **sdmc/luma/Plugins/{TitleID}[^1]**.
+Launch to click **Open Citra Folder** from File tab and copy built 3gx file to `sdmc/luma/Plugins/{TitleID}`.
 
-[^1]: - JPN: `00040000001A0300`
-      - USA: `00040000001A0400`
-      - EUR: `00040000001A0500`
-      
-      see more [3dsdb](https://3dsdb.com/)
+- JPN: `00040000001A0300`
+- USA: `00040000001A0400`
+- EUR: `00040000001A0500`
+
+see more [3dsdb](https://3dsdb.com/)
 
 # Build
 1. Install devkitARM and [libctru](https://github.com/devkitPro/libctru) following [the devkitpro wiki](https://devkitpro.org/wiki/Getting_Started).

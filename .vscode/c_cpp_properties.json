@@ -3,7 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
+                "${workspaceFolder}/Includes/**",
                 "C:\\devkitPro\\libctrpf\\include",
                 "C:\\devkitPro\\libctru\\include"
             ],
@@ -12,12 +12,15 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "windowsSdkVersion": "10.0.22621.0",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/Sources/"
+                ]
+            },
             "compilerPath": "C:\\devkitPro\\devkitARM\\bin\\arm-none-eabi-g++.exe",
             "cStandard": "c11",
             "cppStandard": "c++11",
-            "intelliSenseMode": "windows-gcc-arm",
-            "forcedInclude": [],
+            "intelliSenseMode": "gcc-arm",
             "configurationProvider": "ms-vscode.makefile-tools"
         }
     ],

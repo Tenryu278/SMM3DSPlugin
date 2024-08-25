@@ -1,9 +1,20 @@
-/Build
-*.3gx
+#ARM11 Compiled file 
 *.elf
-*.lst
-/libctru
-/libctrpf-0.7.4
+*.o
 
-#IP Address and port for ftpd.py
+#Compiled directory
+/Build
+/build
+
+#3ds game plugin
+*.3gx
+
+#nm symbols
+*.lst
+
+#include files list (ignore system files)
+*.d
+
+#Options---------------------------------------------
+#IP Address and port number for ftpd.py
 IP_PORT.txt

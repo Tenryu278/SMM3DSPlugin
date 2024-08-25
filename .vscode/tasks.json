@@ -6,8 +6,8 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "make clean\n\r make",
-            "args": [],
+            "command": "make",
+            "args": ["clean", "all"],
             "group": "build",
             "presentation": {
                 "reveal": "always"
@@ -17,19 +17,8 @@
         {
             "label": "build and install Citra",
             "type": "shell",
-            "command": "make clean\n\r make\n\r make to_citra",
-            "args": [],
-            "group": "build",
-            "presentation": {
-                "reveal": "always"
-            },
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "buildlib",
-            "type": "shell",
-            "command": "cd libctrpf-0.7.4\n\r make clean\n\r make",
-            "args": [],
+            "command": "make",
+            "args": ["clean", "all", "to_citra"],
             "group": "build",
             "presentation": {
                 "reveal": "always"
@@ -39,9 +28,9 @@
         {
             "label": "clean",
             "type": "shell",
-            "command": "make clean",
-            "args": [],
-            "group": "none",
+            "command": "make",
+            "args": ["clean"],
+            "group": "build",
             "presentation": {
                 "reveal": "always"
             },

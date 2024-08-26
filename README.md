@@ -2,9 +2,9 @@
 
 [![Makefile CI](https://github.com/Tenryu278/SMM3DSPlugin/actions/workflows/makefile.yml/badge.svg)](https://github.com/Tenryu278/SMM3DSPlugin/actions/workflows/makefile.yml)
 
-Cloned from [CTRPluginFramework-BlankTemplate](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate).
-
 This plugin only runs on Super Mario Maker for Nintendo 3DS.
+
+-----------------------------------------------
 
 # Installation
 > You need a hacked 3ds console. See more [3ds Hacks Guide](https://3ds.hacks.guide/).
@@ -38,6 +38,15 @@ For Example:
 192.168.1.15
 5000
 ```
+
+# Credits
+- devkitARM by devkitpro
+- [libctru](https://github.com/devkitPro/libctru) by devkitpro
+- [libctrpf](https://gitlab.com/thepixellizeross/ctrpluginframework) by [The Pixellizer Group](https://gitlab.com/thepixellizeross)
+- [3gxtool](https://gitlab.com/thepixellizeross/3gxtool) by [The Pixellizer Group](https://gitlab.com/thepixellizeross)
+
+Source codes were clone from [CTRPluginFramework-BlankTemplate](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate).
+
 
 # License
 

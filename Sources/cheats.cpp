@@ -184,6 +184,11 @@ namespace CTRPluginFramework
 		Process::Write8(0x081C9B04, (u8)lives);
 	}
 
+	void SMM3DS::DisableHelper(MenuEntry*)
+	{
+		Process::Write8(0x305A1268, 0);
+	}
+
 	void SMM3DS::AutoJump(MenuEntry*)
 	{
 		Process::Write32(0x317B9DEC, 0x317D7820);

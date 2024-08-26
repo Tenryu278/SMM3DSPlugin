@@ -138,6 +138,12 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            "Disable Helper mode",
+            SMM3DS::DisableHelper,
+            "Disable helper mode on Super Mario Challenge \nMistakes count will always be 0"
+        );
+
+        *folders[0] += new MenuEntry(
             "AutoJump", 
             SMM3DS::AutoJump, 
             "Mario always jumping while enable this code"

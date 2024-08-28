@@ -84,15 +84,14 @@ namespace CTRPluginFramework
 		/// @param  
 		static void InitLives(CTRPluginFramework::MenuEntry*);
 
+		/// @brief Keep Mario's lives
+		/// @param  
+		static void KeepLives(CTRPluginFramework::MenuEntry*);
+
 
 		/// @brief Disable helper mode on Super Mario Challenge (Mistakes count will always be 0)
 		/// @param  
 		static void DisableHelper(CTRPluginFramework::MenuEntry*);
-
-
-		/// @brief Keep Mario's lives
-		/// @param  
-		static void KeepLives(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Mario always jumping while enable this code

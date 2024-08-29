@@ -130,6 +130,11 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            "Invincible",
+            SMM3DS::Invincible
+        );
+
+        *folders[0] += new MenuEntry(
             "Set Mario's lives",
             SMM3DS::KeepLives,
             SMM3DS::InitLives,

@@ -154,6 +154,17 @@ namespace CTRPluginFramework
 		}
 	}
 
+
+	void SMM3DS::Invincible(MenuEntry*)
+	{
+		/**
+		 * This value is Mario's invincible time
+		 * should be 3 or more because the process will delay when closing menu
+		 */
+		Process::Write8(0x317B9F00, 0xC);
+	}
+
+
 	s8 lives = 0;
 
 	void SMM3DS::InitLives(MenuEntry*)

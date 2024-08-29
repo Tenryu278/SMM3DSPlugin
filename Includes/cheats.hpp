@@ -80,6 +80,11 @@ namespace CTRPluginFramework
 		static void KeepFootSteps(CTRPluginFramework::MenuEntry*);
 
 
+		/// @brief 
+		/// @param  
+		static void Invincible(CTRPluginFramework::MenuEntry*);
+
+
 		/// @brief Set Mario's lives on Keyboard. Use Super mario challenge
 		/// @param  
 		static void InitLives(CTRPluginFramework::MenuEntry*);

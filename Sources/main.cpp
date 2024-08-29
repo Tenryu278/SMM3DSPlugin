@@ -169,8 +169,20 @@ exit:
     {
         PluginMenu* menu = new PluginMenu(
             "SMM3DS v1.05",
-             0, 1, 0,
-             "A plugin for SMM3DS(version1.05)"
+             0, 1, 0, 
+R"(Super Mario Maker for Nintendo 3DS (v1.0.5) Plugin
+
+This software is licensed under MIT
+This has no warranty or liability
+https://github.com/Tenryu278/SMM3DSPlugin/blob/master/LICENSE
+
+Github repository:
+https://github.com/Tenryu278/SMM3DSPlugin
+
+Full credits is here:
+https://github.com/Tenryu278/SMM3DSPlugin?tab=readme-ov-file#credits
+
+Copyright (c) 2024 Tenryu278)"
         );
 
         // Synchronize the menu with frame event

@@ -2,13 +2,15 @@
 #include <CTRPluginFramework.hpp>
 #include <vector>
 
-namespace CTRPluginFramework
+using namespace CTRPluginFramework;
+
+namespace SMM3DS
 {
 	u32 score = 0;
 
-	void SMM3DS::InitScore(MenuEntry*)
+	void InitScore(MenuEntry*)
 	{
-        Keyboard k("Enter Score \nMax:" + std::to_string(SMM3DS::maxscore) + "\nMin:" + std::to_string(0), {""});
+        Keyboard k("Enter Score \nMax:" + std::to_string(maxscore) + "\nMin:" + std::to_string(0), {""});
         
 		//read current
 		Process::Read32(0x081C9B00, score);
@@ -17,29 +19,29 @@ namespace CTRPluginFramework
 
 		if (result >= 0)
 		{
-			if (score > SMM3DS::maxscore)
-				score = SMM3DS::maxscore;
+			if (score > maxscore)
+				score = maxscore;
 
 			Process::Write32(0x081C9B00, score);
 		}
 	}
 
-	void SMM3DS::KeepScore(MenuEntry*)
+	void KeepScore(MenuEntry*)
 	{
 		Process::Write32(0x081C9B00, score);
 	}
 
-	void SMM3DS::Editor_ScoreMax(MenuEntry*)
+	void Editor_ScoreMax(MenuEntry*)
 	{
-		Process::Write32(0x081C8CC0, SMM3DS::maxscore);
+		Process::Write32(0x081C8CC0, maxscore);
 	}
 
 
 	u16 time = 0;
 
-	void SMM3DS::InitTime(MenuEntry*)
+	void InitTime(MenuEntry*)
 	{
-        Keyboard k("Enter Time \nMax:" + std::to_string(SMM3DS::maxtime) + "\nMin:" + std::to_string(0), {""});
+        Keyboard k("Enter Time \nMax:" + std::to_string(maxtime) + "\nMin:" + std::to_string(0), {""});
         
 		//read current
 		Process::Read16(0x310366B6, time);
@@ -48,14 +50,14 @@ namespace CTRPluginFramework
 
 		if (result >= 0)
 		{
-			if (time > SMM3DS::maxtime)
-				time = SMM3DS::maxtime;
+			if (time > maxtime)
+				time = maxtime;
 
 			Process::Write16(0x310366B6, time - 1);
 		}
 	}
 
-	void SMM3DS::KeepTime(MenuEntry*)
+	void KeepTime(MenuEntry*)
 	{
 		Process::Write16(0x310366B6, time - 1);
 	}
@@ -63,28 +65,28 @@ namespace CTRPluginFramework
 
 	u8 coin = 0;
 
-	void SMM3DS::InitCoin(MenuEntry*)
+	void InitCoin(MenuEntry*)
 	{
-		Keyboard k("Enter Coin\nMax:" + std::to_string(SMM3DS::maxcoin) + "\nMin:" + std::to_string(0), {""});
+		Keyboard k("Enter Coin\nMax:" + std::to_string(maxcoin) + "\nMin:" + std::to_string(0), {""});
 
 		Process::Read8(0x081C9AF8, coin);
 
 		int result = k.Open(coin, coin);
 		if (result >= 0)
 		{
-			if (coin > SMM3DS::maxcoin)
-				coin = SMM3DS::maxcoin;
+			if (coin > maxcoin)
+				coin = maxcoin;
 
 			Process::Write8(0x081C9AF8, coin);
 		}
 	}
 
-	void SMM3DS::KeepCoin(MenuEntry*)
+	void KeepCoin(MenuEntry*)
 	{
 		Process::Write8(0x081C9AF8, coin);
 	}
 
-	void SMM3DS::SetAutoScroll(MenuEntry*)
+	void SetAutoScroll(MenuEntry*)
 	{
 		const std::vector<std::string> speed = {
 			"None",
@@ -108,13 +110,13 @@ namespace CTRPluginFramework
 		}
 	}
 
-	void SMM3DS::EnableScrollUp(MenuEntry*)
+	void EnableScrollUp(MenuEntry*)
 	{
 		Process::Write8(0x304CB9BB, 0); //Mainworld
 		Process::Write8(0x304EABFF, 0); //SubWorld
 	}
 
-	void SMM3DS::SetSceneSkin(MenuEntry*)
+	void SetSceneSkin(MenuEntry*)
 	{
 		u8 current;
 		u8 result;
@@ -131,7 +133,7 @@ namespace CTRPluginFramework
 
 	u8 footsteps;
 
-	void SMM3DS::SetFootSteps(MenuEntry* entry)
+	void SetFootSteps(MenuEntry* entry)
 	{
 		u8 current;
 		u8 result;
@@ -146,7 +148,7 @@ namespace CTRPluginFramework
 		}
 	}
 
-	void SMM3DS::KeepFootSteps(MenuEntry*)
+	void KeepFootSteps(MenuEntry*)
 	{
 		if (footsteps >= 0 && footsteps <= 5)
 		{
@@ -155,7 +157,7 @@ namespace CTRPluginFramework
 	}
 
 
-	void SMM3DS::Invincible(MenuEntry*)
+	void Invincible(MenuEntry*)
 	{
 		/**
 		 * This value is Mario's invincible time
@@ -167,7 +169,7 @@ namespace CTRPluginFramework
 
 	s8 lives = 0;
 
-	void SMM3DS::InitLives(MenuEntry*)
+	void InitLives(MenuEntry*)
 	{
 		u8 current = 0;
 		Process::Read8(0x081C9B04, current);
@@ -190,22 +192,22 @@ namespace CTRPluginFramework
 		}
 	}
 
-	void SMM3DS::KeepLives(MenuEntry*)
+	void KeepLives(MenuEntry*)
 	{
 		Process::Write8(0x081C9B04, (u8)lives);
 	}
 
-	void SMM3DS::DisableHelper(MenuEntry*)
+	void DisableHelper(MenuEntry*)
 	{
 		Process::Write8(0x305A1268, 0);
 	}
 
-	void SMM3DS::AutoJump(MenuEntry*)
+	void AutoJump(MenuEntry*)
 	{
 		Process::Write32(0x317B9DEC, 0x317D7820);
 	}
 
-	bool SMM3DS::_SetSceneSkin(u8 &result, const u8 &current)
+	bool _SetSceneSkin(u8 &result, const u8 &current)
 	{
 		const std::vector<std::string> SceneSkins = {
 			Color::Green << "Ground",

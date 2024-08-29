@@ -5,11 +5,8 @@
 #include "Helpers.hpp"
 #include "Unicode.h"
 
-namespace CTRPluginFramework
+namespace SMM3DS
 {
-	class SMM3DS
-	{
-	public:
 		//Title ID(Japan)
 		const static u64 idjp = 0x00040000001A0300;
 
@@ -25,85 +22,84 @@ namespace CTRPluginFramework
 
 		/// @brief Set score on keyboard
 		/// @param 
-		static void InitScore(CTRPluginFramework::MenuEntry*);
+		void InitScore(CTRPluginFramework::MenuEntry*);
 
-		static void KeepScore(CTRPluginFramework::MenuEntry*);
+		void KeepScore(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set and keep max score on editor mode
 		/// @param 
-		static void Editor_ScoreMax(CTRPluginFramework::MenuEntry*);
+		void Editor_ScoreMax(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set time on keyboard
 		/// @param 
-		static void InitTime(CTRPluginFramework::MenuEntry*);
+		void InitTime(CTRPluginFramework::MenuEntry*);
 
-		static void KeepTime(CTRPluginFramework::MenuEntry*);
+		void KeepTime(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set Coin on keyboard
 		/// @param 
-		static void InitCoin(CTRPluginFramework::MenuEntry*);
+		void InitCoin(CTRPluginFramework::MenuEntry*);
 
-		static void KeepCoin(CTRPluginFramework::MenuEntry*);
+		void KeepCoin(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set Auto Scroll.
 		///	This code is valid on both editor mode and play mode.
 		/// @param 
-		static void SetAutoScroll(CTRPluginFramework::MenuEntry*);
+		void SetAutoScroll(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Enable Scrolling Up
 		/// @param 
-		static void EnableScrollUp(CTRPluginFramework::MenuEntry*);
+		void EnableScrollUp(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set Scene Skin
 		/// @param  
-		static void SetSceneSkin(CTRPluginFramework::MenuEntry*);
+		void SetSceneSkin(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set FootSteps
 		/// @param  
-		static void SetFootSteps(CTRPluginFramework::MenuEntry*);
+		void SetFootSteps(CTRPluginFramework::MenuEntry*);
 
 		/// @brief Keep FootSteps
 		/// @param  
-		static void KeepFootSteps(CTRPluginFramework::MenuEntry*);
+		void KeepFootSteps(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief 
 		/// @param  
-		static void Invincible(CTRPluginFramework::MenuEntry*);
+		void Invincible(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Set Mario's lives on Keyboard. Use Super mario challenge
 		/// @param  
-		static void InitLives(CTRPluginFramework::MenuEntry*);
+		void InitLives(CTRPluginFramework::MenuEntry*);
 
 		/// @brief Keep Mario's lives
 		/// @param  
-		static void KeepLives(CTRPluginFramework::MenuEntry*);
+		void KeepLives(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Disable helper mode on Super Mario Challenge (Mistakes count will always be 0)
 		/// @param  
-		static void DisableHelper(CTRPluginFramework::MenuEntry*);
+		void DisableHelper(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Mario always jumping while enable this code
 		/// @param  
-		static void AutoJump(CTRPluginFramework::MenuEntry*);
+		void AutoJump(CTRPluginFramework::MenuEntry*);
 
-	private:
+
 		/// @brief Select Scene Skin on keyboard
 		/// @param result Reurns selected. 
 		///	If not selected, returns -1 (cancel) or -2 (cancel bacause sleeping).
 		/// @param current Current Scene Skin. Defalt is Ground.
 		/// @return True is success, False is none
-		static bool _SetSceneSkin(u8 &result, const u8 &current = 0);
-	};
+		bool _SetSceneSkin(u8 &result, const u8 &current = 0);
 }
 #endif

@@ -167,7 +167,7 @@ exit:
 
     int main(void)
     {
-        PluginMenu* menu = new PluginMenu(
+        PluginMenu menu(
             "SMM3DS v1.05",
              0, 1, 0, 
 R"(Super Mario Maker for Nintendo 3DS (v1.0.5) Plugin
@@ -186,36 +186,30 @@ Copyright (c) 2024 Tenryu278)"
         );
 
         // Synchronize the menu with frame event
-        menu->SynchronizeWithFrame(true);
+        menu.SynchronizeWithFrame(true);
 
-        MenuFolder* play = new MenuFolder(
+        MenuFolder play(
             "PlayingCodes", 
             "These code are valid on playing."
         );
         
-        MenuFolder* editor = new MenuFolder(
+        MenuFolder editor(
             "EditorCodes", 
             "These code are valid on editor mode."
         );
 
-        std::vector<MenuFolder*> folders = {play, editor};
+        std::vector<MenuFolder*> folders = {&play, &editor};
 
         if (Process::GetTitleID() == SMM3DS::idjp)
         {
             // Init our menu entries & folders
-            InitMenu(*menu, folders);
+            InitMenu(menu, folders);
         }
         else
             OSD::Notify("This Plugin does not supported on this game.", Color::Red);
 
         // Launch menu and mainloop
-        menu->Run();
-
-        delete menu;
-
-        //delete folder after lanched menu
-        delete play;
-        delete editor;
+        menu.Run();
 
         // Exit plugin
         return (0);

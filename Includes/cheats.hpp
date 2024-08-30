@@ -76,6 +76,12 @@ namespace SMM3DS
 		void Invincible(CTRPluginFramework::MenuEntry*);
 
 
+		/// @brief Always Star Power
+		/// @note This doesn't working for graphics
+		/// @param  
+		void StarPower(CTRPluginFramework::MenuEntry*);
+
+
 		/// @brief Set Mario's lives on Keyboard. Use Super mario challenge
 		/// @param  
 		void InitLives(CTRPluginFramework::MenuEntry*);

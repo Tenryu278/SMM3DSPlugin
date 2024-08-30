@@ -135,6 +135,12 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            "Always Star Power",
+            SMM3DS::StarPower,
+            "This doesn't working for graphics"
+        );
+
+        *folders[0] += new MenuEntry(
             "Set Mario's lives",
             SMM3DS::KeepLives,
             SMM3DS::InitLives,

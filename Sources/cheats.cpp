@@ -167,6 +167,12 @@ namespace SMM3DS
 	}
 
 
+	void StarPower(MenuEntry*)
+	{
+		Process::Write16(0x317B9F28, 0xFF);
+	}
+
+
 	s8 lives = 0;
 
 	void InitLives(MenuEntry*)

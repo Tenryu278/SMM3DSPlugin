@@ -167,6 +167,21 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            "ItemCheat",
+            SMM3DS::ItemCheatAuto,
+            (std::string)"---Usage---\n"+
+FONT_DL+FONT_R+": Small Mario\n"+
+FONT_DR+FONT_R+": Super Mario\n"+
+FONT_DU+FONT_R+": Fire Mario\n"+
+FONT_DD+FONT_R+": Weird/Raccoon/Cape/Propellor Mario\n(Depends on Game skin)\n\n"+
+
+"--SMB1 only--\n"+
+FONT_DD+FONT_L+": Big Mario\n"+
+FONT_DU+FONT_L+": Chara Mario\n"+
+(Color::Blue<<"Note: This is incomplete so it may doesn't working well")
+        );
+
+        *folders[0] += new MenuEntry(
             "AutoJump", 
             SMM3DS::AutoJump, 
             "Mario always jumping while enable this code"

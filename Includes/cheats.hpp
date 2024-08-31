@@ -7,6 +7,27 @@
 
 namespace SMM3DS
 {
+	enum PowerUp
+	{
+		Small,
+		Super,
+		Fire,
+		Weird,
+		Propellor,
+		Cape,
+		Raccoon,
+		Chara,
+		Big
+	};
+
+	enum GameSkin
+	{
+		SMB1,
+		SMB3,
+		SMW,
+		NSMBU
+	};
+
 		//Title ID(Japan)
 		const static u64 idjp = 0x00040000001A0300;
 
@@ -108,6 +129,11 @@ namespace SMM3DS
 		/// @brief 
 		/// @param  
 		void KeepDamageToBecome(CTRPluginFramework::MenuEntry*);
+
+
+		/// @brief usage
+		/// @param  
+		void ItemCheatAuto(CTRPluginFramework::MenuEntry*);
 
 
 		/// @brief Mario always jumping while enable this code

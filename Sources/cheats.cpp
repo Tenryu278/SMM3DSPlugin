@@ -264,6 +264,76 @@ namespace SMM3DS
 	}
 
 
+	void ItemCheatAuto(MenuEntry*)
+	{
+		u32 kdown = Controller::GetKeysDown(false);
+		/*if (kdown & (Key::DPadDown|Key::DPadLeft|Key::DPadRight|Key::DPadUp))
+			return;
+		*/
+		
+		u8 curskin = 0;
+		PowerUp result;
+
+		//Special PowerUps depend on game skin
+		PowerUp RD, LD = Big, LU = Chara;
+		/**
+		 * Read the current game skin. This is incomplete
+		 */
+		Process::Read8(0x305A0FFC, curskin);
+		switch ((GameSkin)curskin)
+		{
+		case SMB1:
+			RD = PowerUp::Weird;
+
+			if (kdown&Key::DPadUp && kdown&Key::L)
+			{
+				result = LU;
+				goto WMstatus;
+			}
+			else if (kdown&Key::DPadDown && kdown&Key::L)
+			{
+				result = LD;
+				goto WMstatus;
+			}
+			break;
+
+		case SMB3:
+			RD = PowerUp::Raccoon;
+			break;
+
+		case SMW:
+			RD = PowerUp::Cape;
+			break;
+
+		case NSMBU:
+			RD = PowerUp::Propellor;
+			break;
+		
+		default:
+			return;
+		}
+		
+		if (kdown&Key::DPadDown && kdown&Key::R)
+			result = RD;
+		
+		else if (kdown&Key::DPadUp && kdown&Key::R)
+			result = PowerUp::Fire;
+		
+		else if (kdown&Key::DPadRight && kdown&Key::R)
+			result = PowerUp::Super;
+
+		else if (kdown&Key::DPadLeft && kdown&Key::R)
+			result = PowerUp::Small;
+
+		else
+			return;
+		
+WMstatus:
+		Process::Write8(0x317B8BE8, (u8)result); //status
+		Process::Write8(0x317BBE88, (u8)result); //visibility
+	}
+
+
 	void AutoJump(MenuEntry*)
 	{
 		Process::Write32(0x317B9DEC, 0x317D7820);

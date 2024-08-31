@@ -131,8 +131,25 @@ namespace SMM3DS
 		void KeepDamageToBecome(CTRPluginFramework::MenuEntry*);
 
 
-		/// @brief usage
-		/// @param  
+		/**
+		 * @brief 
+		 * DL+R: Small Mario
+		 * 
+		 * DR+R: Super Mario
+		 * 
+		 * DU+R: Fire Mario
+		 * 
+		 * DD+R: Weird/Raccoon/Cape/Propellor Mario
+		 *
+		 * 
+		 * --SMB3 only--
+		 * 
+		 * DD+L: Big Mario
+		 * 
+		 * DU+L: Chara Mario
+		 * @param
+		 * @note This is incomplete so it may doesn't working well
+		 */
 		void ItemCheatAuto(CTRPluginFramework::MenuEntry*);
 
 

@@ -160,6 +160,13 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            "Damage to become ...",
+            nullptr,
+            SMM3DS::SetDamageToBecome,
+            Color::Blue<<"Note: This doesn't work for small Mario"
+        );
+
+        *folders[0] += new MenuEntry(
             "AutoJump", 
             SMM3DS::AutoJump, 
             "Mario always jumping while enable this code"

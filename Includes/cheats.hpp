@@ -101,6 +101,15 @@ namespace SMM3DS
 		void Faster(CTRPluginFramework::MenuEntry*);
 
 
+		/// @brief 
+		/// @param  
+		void SetDamageToBecome(CTRPluginFramework::MenuEntry*);
+
+		/// @brief 
+		/// @param  
+		void KeepDamageToBecome(CTRPluginFramework::MenuEntry*);
+
+
 		/// @brief Mario always jumping while enable this code
 		/// @param  
 		void AutoJump(CTRPluginFramework::MenuEntry*);

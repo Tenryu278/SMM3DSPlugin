@@ -224,6 +224,46 @@ namespace SMM3DS
 	}
 
 
+	u8 state = 0;
+
+	void SetDamageToBecome(MenuEntry* entry)
+	{
+		u8 current = 0;
+		Process::Read8(0x317B8C00, current);
+
+		const std::vector<std::string> Mstatus = {
+			"Small Mario",
+			"Super Mario",
+			"Fire Mario",
+			"Weird Mario",
+			"Propellor Mario",
+			"Cape Mario",
+			"Raccoon Mario",
+			"Chara Mario",
+			"Big Mario"
+		};
+
+		Keyboard k("Select Mario's status ...", Mstatus);
+		if (current >= 0 && current <= Mstatus.size()-1)
+			k.ChangeSelectedEntry(current);
+		
+		int result;
+		if ((result = k.Open()) >= 0)
+		{
+			state = (u8)result;
+			entry->SetGameFunc(KeepDamageToBecome); 
+			entry->Enable();
+		}
+		else
+			entry->Disable();
+	}
+
+	void KeepDamageToBecome(MenuEntry*)
+	{
+		Process::Write8(0x317B8C00, state);
+	}
+
+
 	void AutoJump(MenuEntry*)
 	{
 		Process::Write32(0x317B9DEC, 0x317D7820);

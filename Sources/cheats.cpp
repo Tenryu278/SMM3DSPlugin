@@ -100,7 +100,9 @@ namespace SMM3DS
 		Process::Read8(0x304CB9BA, current);
 
 		Keyboard k("Select scroll speed to set ... \nCurrent:" + speed[current], speed);
-
+		if (current >= 0 && current <= speed.size()-1)
+			k.ChangeSelectedEntry(current);
+		
 		int result = k.Open();
 
 		if (result >= 0)
@@ -239,6 +241,9 @@ namespace SMM3DS
 		};
 
 		Keyboard k("Select Scene Skin to set... \nCurrent:" + SceneSkins[current], SceneSkins);
+		if (current >= 0 && current <= SceneSkins.size()-1)
+			k.ChangeSelectedEntry(current);
+		
 		result = k.Open();
 		if ((s8)result < 0)
 			return false;

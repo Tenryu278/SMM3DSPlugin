@@ -208,6 +208,20 @@ namespace SMM3DS
 		Process::Write8(0x305A1268, 0);
 	}
 
+
+	void Faster(MenuEntry*)
+	{
+		/**
+		 * Default maximum is 3
+		 */
+		u32 kdown = Controller::GetKeysDown(true);
+		if (kdown & Key::Left)
+			Process::WriteFloat(0x317B88DC, -6);
+		if (kdown & Key::Right)
+			Process::WriteFloat(0x317B88DC, 6);
+	}
+
+
 	void AutoJump(MenuEntry*)
 	{
 		Process::Write32(0x317B9DEC, 0x317D7820);

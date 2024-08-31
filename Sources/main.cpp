@@ -155,6 +155,11 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            "Faster",
+            SMM3DS::Faster
+        );
+
+        *folders[0] += new MenuEntry(
             "AutoJump", 
             SMM3DS::AutoJump, 
             "Mario always jumping while enable this code"

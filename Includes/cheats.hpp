@@ -96,6 +96,11 @@ namespace SMM3DS
 		void DisableHelper(CTRPluginFramework::MenuEntry*);
 
 
+		/// @brief 
+		/// @param  
+		void Faster(CTRPluginFramework::MenuEntry*);
+
+
 		/// @brief Mario always jumping while enable this code
 		/// @param  
 		void AutoJump(CTRPluginFramework::MenuEntry*);

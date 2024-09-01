@@ -1,3 +1,19 @@
+/**
+ * @file SMM3DSPlugin Cheats source file
+ * 
+ * This software is licensed under MIT
+ * This has no warranty or liability
+ * https://github.com/Tenryu278/SMM3DSPlugin/blob/master/LICENSE
+ * 
+ * Github repository:
+ * https://github.com/Tenryu278/SMM3DSPlugin
+ * 
+ * Full credits is here:
+ * https://github.com/Tenryu278/SMM3DSPlugin?tab=readme-ov-file#credits
+ * 
+ * Copyright (c) 2024 Tenryu278
+ */
+
 #include <cheats.hpp>
 #include <CTRPluginFramework.hpp>
 #include <vector>
@@ -118,6 +134,7 @@ namespace SMM3DS
 
 		u8 current;
 		/*Read MainWorld*/
+		//TODO: Read current world status
 		Process::Read8(0x304CB9BA, current);
 
 		Keyboard k("Select scroll speed to set ... \nCurrent:" + speed[current], speed);

@@ -1,3 +1,20 @@
+/**
+ * @file SMM3DSPlugin Cheats header file
+ * 
+ * This software is licensed under MIT
+ * This has no warranty or liability
+ * https://github.com/Tenryu278/SMM3DSPlugin/blob/master/LICENSE
+ * 
+ * Github repository:
+ * https://github.com/Tenryu278/SMM3DSPlugin
+ * 
+ * Full credits is here:
+ * https://github.com/Tenryu278/SMM3DSPlugin?tab=readme-ov-file#credits
+ * 
+ * Copyright (c) 2024 Tenryu278
+ */
+
+
 #ifndef CHEATS_HPP
 #define CHEATS_HPP
 

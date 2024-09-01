@@ -180,10 +180,7 @@ namespace SMM3DS
 
 	void KeepFootSteps(MenuEntry*)
 	{
-		if (footsteps >= 0 && footsteps <= 5)
-		{
-			Process::Write8(0x007ACF3C, footsteps);
-		}
+		Process::Write8(0x007ACF3C, footsteps);
 	}
 
 

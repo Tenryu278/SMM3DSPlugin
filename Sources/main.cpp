@@ -187,6 +187,12 @@ FONT_DU+FONT_L+": Chara Mario\n"+
             "Mario always jumping while enable this code"
         );
 
+        *folders[0] += new MenuEntry(
+            "ForceCrouch",
+            SMM3DS::ForceCrouch,
+            "Mario always crouching while enable this code"
+        );
+
         /*[--editor--]*/
         *folders[1] += new MenuEntry(
             "MaxScore(Editor)", 

@@ -342,6 +342,13 @@ WMstatus:
 		Process::Write32(0x317B9DEC, 0x317D7820);
 	}
 
+
+	void ForceCrouch(MenuEntry*)
+	{
+		Process::Write32(0x317B9DF0, 0x317D78B0);
+		Process::Write32(0x317B9DEC, 0x317D7890);
+	}
+
 	bool _SetSceneSkin(u8 &result, const u8 &current)
 	{
 		const std::vector<std::string> SceneSkins = {

@@ -8,7 +8,7 @@ namespace SMM3DS
 {
 	u32 score = 0;
 
-	void InitScore(MenuEntry*)
+	void InitScore(MenuEntry* entry)
 	{
         Keyboard k("Enter Score \nMax:" + std::to_string(maxscore) + "\nMin:" + std::to_string(0));
 		k.IsHexadecimal(false);
@@ -24,6 +24,12 @@ namespace SMM3DS
 				score = maxscore;
 
 			Process::Write32(0x081C9B00, score);
+			entry->SetGameFunc(KeepScore);
+		}
+		else
+		{
+			entry->Disable();
+			entry->SetGameFunc(nullptr);
 		}
 	}
 
@@ -32,7 +38,7 @@ namespace SMM3DS
 		Process::Write32(0x081C9B00, score);
 	}
 
-	void Editor_ScoreMax(MenuEntry*)
+	void Editor_ScoreMax(MenuEntry* entry)
 	{
 		Process::Write32(0x081C8CC0, maxscore);
 	}
@@ -40,7 +46,7 @@ namespace SMM3DS
 
 	u16 time = 0;
 
-	void InitTime(MenuEntry*)
+	void InitTime(MenuEntry* entry)
 	{
         Keyboard k("Enter Time \nMax:" + std::to_string(maxtime) + "\nMin:" + std::to_string(0));
 		k.IsHexadecimal(false);
@@ -56,6 +62,12 @@ namespace SMM3DS
 				time = maxtime;
 
 			Process::Write16(0x310366B6, time - 1);
+			entry->SetGameFunc(KeepTime);
+		}
+		else
+		{
+			entry->Disable();
+			entry->SetGameFunc(nullptr);
 		}
 	}
 
@@ -67,7 +79,7 @@ namespace SMM3DS
 
 	u8 coin = 0;
 
-	void InitCoin(MenuEntry*)
+	void InitCoin(MenuEntry* entry)
 	{
 		Keyboard k("Enter Coin\nMax:" + std::to_string(maxcoin) + "\nMin:" + std::to_string(0));
 		k.IsHexadecimal(false);
@@ -81,6 +93,12 @@ namespace SMM3DS
 				coin = maxcoin;
 
 			Process::Write8(0x081C9AF8, coin);
+			entry->SetGameFunc(KeepScore);
+		}
+		else
+		{
+			entry->Disable();
+			entry->SetGameFunc(nullptr);
 		}
 	}
 
@@ -150,6 +168,13 @@ namespace SMM3DS
 		if (_SetSceneSkin(result, current))
 		{
 			footsteps = result;
+			entry->SetGameFunc(KeepFootSteps);
+			entry->Enable();
+		}
+		else
+		{
+			entry->Disable();
+			entry->SetGameFunc(nullptr);
 		}
 	}
 
@@ -180,7 +205,7 @@ namespace SMM3DS
 
 	s8 lives = 0;
 
-	void InitLives(MenuEntry*)
+	void InitLives(MenuEntry* entry)
 	{
 		u8 current = 0;
 		Process::Read8(0x081C9B04, current);
@@ -200,6 +225,12 @@ namespace SMM3DS
 			
 			lives = (s8)current;
 			Process::Write8(0x081C9B04, (u8)lives);
+			entry->SetGameFunc(KeepLives);
+		}
+		else
+		{
+			entry->Disable();
+			entry->SetGameFunc(nullptr);
 		}
 	}
 

@@ -84,21 +84,21 @@ exit:
         /*[--play--]*/
         *folders[0] += new MenuEntry(
             "Set Score", 
-            SMM3DS::KeepScore, 
+            nullptr, 
             SMM3DS::InitScore,
             "Press keyboard to change score\nPress checkbox to keep score"
         );
 
         *folders[0] += new MenuEntry(
             "Set Time", 
-            SMM3DS::KeepTime, 
+            nullptr, 
             SMM3DS::InitTime, 
             "Press keyboard to change time\nPress checkbox to keep time"
         );
 
         *folders[0] += new MenuEntry(
             Color::Yellow << "Set Coin",
-            SMM3DS::KeepCoin,
+            nullptr,
             SMM3DS::InitCoin,
             "Press keyboard to change coin\nPress checkbox to keep coin"
         );
@@ -124,7 +124,7 @@ exit:
 
         *folders[0] += new MenuEntry(
             "Change footsteps",
-            SMM3DS::KeepFootSteps,
+            nullptr,
             SMM3DS::SetFootSteps,
             "Change footstep sounds\nPress checkbox to keep\nThis code is valid on both editor mode and play mode."
         );
@@ -142,7 +142,7 @@ exit:
 
         *folders[0] += new MenuEntry(
             "Set Mario's lives",
-            SMM3DS::KeepLives,
+            nullptr,
             SMM3DS::InitLives,
             "Press keyboard to change lives\nPress checkbox to keep lives\n"+
             (Color::Blue<<"Note: If you lives is below 0, you'll be GameOver when quit cource")

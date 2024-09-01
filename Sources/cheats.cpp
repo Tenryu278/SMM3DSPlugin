@@ -10,7 +10,8 @@ namespace SMM3DS
 
 	void InitScore(MenuEntry*)
 	{
-        Keyboard k("Enter Score \nMax:" + std::to_string(maxscore) + "\nMin:" + std::to_string(0), {""});
+        Keyboard k("Enter Score \nMax:" + std::to_string(maxscore) + "\nMin:" + std::to_string(0));
+		k.IsHexadecimal(false);
         
 		//read current
 		Process::Read32(0x081C9B00, score);
@@ -41,7 +42,8 @@ namespace SMM3DS
 
 	void InitTime(MenuEntry*)
 	{
-        Keyboard k("Enter Time \nMax:" + std::to_string(maxtime) + "\nMin:" + std::to_string(0), {""});
+        Keyboard k("Enter Time \nMax:" + std::to_string(maxtime) + "\nMin:" + std::to_string(0));
+		k.IsHexadecimal(false);
         
 		//read current
 		Process::Read16(0x310366B6, time);
@@ -67,7 +69,8 @@ namespace SMM3DS
 
 	void InitCoin(MenuEntry*)
 	{
-		Keyboard k("Enter Coin\nMax:" + std::to_string(maxcoin) + "\nMin:" + std::to_string(0), {""});
+		Keyboard k("Enter Coin\nMax:" + std::to_string(maxcoin) + "\nMin:" + std::to_string(0));
+		k.IsHexadecimal(false);
 
 		Process::Read8(0x081C9AF8, coin);
 

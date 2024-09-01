@@ -180,6 +180,11 @@ namespace SMM3DS
 	void ForceCrouch(CTRPluginFramework::MenuEntry*);
 
 
+	/// @brief 
+	/// @param  
+	void MidAirCrouch(CTRPluginFramework::MenuEntry*);
+
+
 	/// @brief Select Scene Skin on keyboard
 	/// @param result Reurns selected. 
 	///	If not selected, returns -1 (cancel) or -2 (cancel bacause sleeping).

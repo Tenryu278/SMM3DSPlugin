@@ -193,6 +193,12 @@ FONT_DU+FONT_L+": Chara Mario\n"+
             "Mario always crouching while enable this code"
         );
 
+        *folders[0] += new MenuEntry(
+            "MidAir Crouch Jump",
+            SMM3DS::MidAirCrouch,
+            "You can jump in mid air but any jumps will be with crouching while enable this code"
+        );
+
         /*[--editor--]*/
         *folders[1] += new MenuEntry(
             "MaxScore(Editor)", 

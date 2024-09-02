@@ -414,7 +414,7 @@ WMstatus:
 		if ((result=k.Open())>=0)
 		{
 			enableCrouch = result^1;
-			entry->SetGameFunc(Keep_CrouchState);
+			entry->SetGameFunc(Keep_CrouchS);
 			entry->Enable();
 		}
 		else
@@ -424,7 +424,7 @@ WMstatus:
 		}
 	}
 
-	void Keep_CrouchState(MenuEntry*)
+	void Keep_CrouchS(MenuEntry*)
 	{
 		/**
 		 * a byte of first is currnt game skin

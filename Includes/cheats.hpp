@@ -207,7 +207,7 @@ namespace SMM3DS
 
 	/// @brief 
 	/// @param  
-	void Keep_CrouchState(CTRPluginFramework::MenuEntry*);
+	void Keep_CrouchS(CTRPluginFramework::MenuEntry*);
 
 
 	/// @brief 

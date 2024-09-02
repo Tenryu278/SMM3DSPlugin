@@ -199,6 +199,12 @@ FONT_DU+FONT_L+": Chara Mario\n"+
             "You can jump in mid air but any jumps will be with crouching while enable this code"
         );
 
+        *folders[0] += new MenuEntry(
+            "Toggle Crouch",
+            nullptr,
+            SMM3DS::Toggle_Crouch
+        );
+
         /*[--editor--]*/
         *folders[1] += new MenuEntry(
             "MaxScore(Editor)", 

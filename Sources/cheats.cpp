@@ -401,6 +401,43 @@ WMstatus:
 	}
 
 
+	bool enableCrouch;
+
+	void Toggle_Crouch(MenuEntry* entry)
+	{
+		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
+		int result;
+		if ((result=k.Open())>=0)
+		{
+			enableCrouch = result^1;
+			entry->SetGameFunc(Keep_CrouchState);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
+	}
+
+	void Keep_CrouchState(MenuEntry*)
+	{
+		/**
+		 * a byte of first is currnt game skin
+		 * 9B:SMB1  A1:SMB3  A7:SMW  AD: NSMBU
+		 * 
+		 * a byte of last is status of this element
+		 * C3:Disable  C7:Enable
+		 */				
+		u8 curskin;
+		Process::Read8(0x305A0FFC, curskin);
+		curskin = 0x9B+(6*curskin);
+
+		u16 write=(curskin<<8)+((u16)enableCrouch*0x04+0xC3);
+		Process::Write16(0x30F917B0, write);
+	}
+
+
 	bool _SetSceneSkin(u8 &result, const u8 &current)
 	{
 		const std::vector<std::string> SceneSkins = {

@@ -251,7 +251,7 @@ Copyright (c) 2024 Tenryu278)"
 
         std::vector<MenuFolder*> folders = {&play, &editor};
 
-        if (Process::GetTitleID() == SMM3DS::idjp)
+        if (SMM3DS::IsSMM3DS(Process::GetTitleID()))
         {
             // Init our menu entries & folders
             InitMenu(*menu, folders);

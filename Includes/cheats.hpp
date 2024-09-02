@@ -45,8 +45,24 @@ namespace SMM3DS
 		NSMBU
 	};
 
-	//Title ID(Japan)
-	constexpr u64 idjp = 0x00040000001A0300;
+	enum TitleID : u64
+	{
+		/**
+		 * SMM3DS::TitleID from https://3dsdb.com/
+		 */
+		JPN = 0x00040000001A0300,
+		USA = 0x00040000001A0400,
+		EUR = 0x00040000001A0500
+	};
+
+	/// @brief Check current game is SMM3DS
+	/// @param tid Title ID 
+	/// @return 
+	inline bool IsSMM3DS(u64 tid)
+	{
+		return (tid==TitleID::JPN||tid==TitleID::USA||tid==TitleID::EUR);
+	}
+
 
 	//visible max score
 	constexpr u32 maxscore = 999999990;

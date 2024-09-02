@@ -441,6 +441,140 @@ WMstatus:
 		Process::Write16(0x30F917B0, write);
 	}
 
+	/// @brief 
+	/// @param  
+	void Toggle_JMovement(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+	/// @brief 
+	/// @param  
+	void Keep_JMovementS(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+
+	/// @brief 
+	/// @param  
+	void Toggle_WallKick(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+	/// @brief 
+	/// @param  
+	void Keep_WallKickS(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+
+	/// @brief 
+	/// @param  
+	void Toggle_HipAttack(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+	/// @brief 
+	/// @param  
+	void Keep_HipAttackS(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+
+	/// @brief 
+	/// @param  
+	void Toggle_SwimStyle(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+	/// @brief 
+	/// @param  
+	void Keep_SwimStyleS(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+
+	/// @brief 
+	/// @param  
+	void Toggle_StarJump(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+	/// @brief 
+	/// @param  
+	void Keep_StarJumpS(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+
+	/// @brief 
+	/// @param  
+	void Toggle_Carry(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+	/// @brief 
+	/// @param  
+	void Keep_CarryS(CTRPluginFramework::MenuEntry*)
+	{
+		
+	}
+
+
+	/// @brief 
+	/// @param  
+	void Toggle_ThrowUp(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+	/// @brief 
+	/// @param  
+	void Keep_ThrowUpS(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+
+	/// @brief 
+	/// @param  
+	void Toggle_LookUp(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+	/// @brief 
+	/// @param  
+	void Keep_LookUpS(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+
+	/// @brief 
+	/// @param  
+	void Toggle_SpinJump(CTRPluginFramework::MenuEntry*)
+	{
+
+	}
+
+	/// @brief 
+	/// @param  
+	void Keep_SpinJumpS(CTRPluginFramework::MenuEntry*)
+	{
+		
+	}
+
 
 	bool _SetSceneSkin(u8 &result, const u8 &current)
 	{

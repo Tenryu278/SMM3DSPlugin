@@ -262,13 +262,17 @@ namespace SMM3DS
 	void Faster(MenuEntry*)
 	{
 		/**
+		 * Left input takes precedence
+		 * 
 		 * Default maximum is 3
 		 */
 		u32 kdown = Controller::GetKeysDown(true);
 		if (kdown & Key::Left)
 			Process::WriteFloat(0x317B88DC, -6);
-		if (kdown & Key::Right)
+		else if (kdown & Key::Right)
 			Process::WriteFloat(0x317B88DC, 6);
+		else if (!(kdown & (Key::Left|Key::Right)))
+			Process::WriteFloat(0x317B88DC, 0);
 	}
 
 

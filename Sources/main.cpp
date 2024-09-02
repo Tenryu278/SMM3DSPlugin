@@ -156,7 +156,8 @@ exit:
 
         *folders[0] += new MenuEntry(
             "Faster",
-            SMM3DS::Faster
+            SMM3DS::Faster,
+            "If C-pad(or D-pad) is not pressed, you'll stop immediately"
         );
 
         *folders[0] += new MenuEntry(

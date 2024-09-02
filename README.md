@@ -1,10 +1,20 @@
-# Super Mario Maker for Nintendo 3DS (v1.0.5) Plugin
+# Super Mario Maker for Nintendo 3DS (v1.05) Plugin
 
 [![Makefile CI](https://github.com/Tenryu278/SMM3DSPlugin/actions/workflows/makefile.yml/badge.svg)](https://github.com/Tenryu278/SMM3DSPlugin/actions/workflows/makefile.yml)
 
 This plugin only runs on Super Mario Maker for Nintendo 3DS.
 
 -----------------------------------------------
+
+This plugin tested on:
+```
+Super Mario Maker for Nintendo 3DS v1.05 (Region: JPN)
+
+New Nintendo 3DS
+Lime3DS 2115 Windows MSVC
+https://github.com/Lime3DS/Lime3DS/releases/tag/2115
+```
+It may doesn't working well on other console or emulator
 
 # Installation
 > You need a hacked 3ds console. See more [3ds Hacks Guide](https://3ds.hacks.guide/).

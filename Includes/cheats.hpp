@@ -46,16 +46,16 @@ namespace SMM3DS
 	};
 
 	//Title ID(Japan)
-	const static u64 idjp = 0x00040000001A0300;
+	constexpr u64 idjp = 0x00040000001A0300;
 
 	//visible max score
-	const static u32 maxscore = 999999990;
+	constexpr u32 maxscore = 999999990;
 
 	//visible max time
-	const static u16 maxtime = 999;
+	constexpr u16 maxtime = 999;
 
 	//visible max coin
-	const static u8 maxcoin = 99;
+	constexpr u8 maxcoin = 99;
 
 
 	/// @brief Set score on keyboard

@@ -698,6 +698,19 @@ WMstatus:
 	}
 
 
+	bool GetGameSkin(GameSkin &result)
+	{
+		u8 tmp;
+		if (!CTRPluginFramework::Process::Read8(0x305A0FFC, tmp))
+			return false;
+		if (result>=0 && result <= GameSkin::NSMBU)
+			result = (GameSkin)tmp;
+		else
+			return false;
+		return true;
+	}
+
+
 	bool _SetSceneSkin(u8 &result, u8 current)
 	{
 		const std::vector<std::string> SceneSkins = {

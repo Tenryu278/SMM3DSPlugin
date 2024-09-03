@@ -297,6 +297,24 @@ namespace SMM3DS
 	/// @return True if success, false otherwise
 	bool GetGameSkin(GameSkin &result);
 
+
+	/* TODO: Standalize argument or specification for _Select_KeyBoard and _SetSceneSkin */
+
+
+	/// @brief Select GameSkin on Keyboard and set Gamefunc of MenuEntry
+	/// @param entry Pointer to MenuEntry. This is use for Enable this entry and Setting GameFunc
+	/// @param Gamefunc Function to execute in mainloop
+	/// @param data Set result of selected GameSkin by user.
+	/// @param desc Description to show on Keyboard
+	void _Select_KeyBoard(CTRPluginFramework::MenuEntry* entry, void(*Gamefunc)(CTRPluginFramework::MenuEntry*), GameSkin &data, const std::string &desc="");
+
+	/// @brief Select enable or disable element on Keyboard and set Gamefunc of MenuEntry
+	/// @param entry Pointer to MenuEntry. This is use for Enable this entry and Setting GameFunc
+	/// @param Gamefunc Function to execute in mainloop
+	/// @param data Set result of selected by user
+	/// @param desc Description to show on Keyboard
+	void _Select_KeyBoard(CTRPluginFramework::MenuEntry* entry, void(*Gamefunc)(CTRPluginFramework::MenuEntry*), bool &data, const std::string &desc="");
+
 	/// @brief Select Scene Skin on keyboard
 	/// @param result Reurns selected. 
 	///	If not selected, returns -1 (cancel) or -2 (cancel bacause sleeping).

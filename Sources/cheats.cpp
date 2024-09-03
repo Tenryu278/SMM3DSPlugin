@@ -409,19 +409,7 @@ WMstatus:
 
 	void Toggle_Crouch(MenuEntry* entry)
 	{
-		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
-		int result;
-		if ((result=k.Open())>=0)
-		{
-			enableCrouch = result^1;
-			entry->SetGameFunc(Keep_CrouchS);
-			entry->Enable();
-		}
-		else
-		{
-			entry->SetGameFunc(nullptr);
-			entry->Disable();
-		}
+		_Select_KeyBoard(entry, Keep_CrouchS, enableCrouch);
 	}
 
 	void Keep_CrouchS(MenuEntry*)
@@ -446,19 +434,12 @@ WMstatus:
 
 	void Toggle_JMovement(CTRPluginFramework::MenuEntry* entry)
 	{
-		Keyboard k("Can Mario reverse on jumping\nSMM1: Disable", (std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
-		int result;
-		if ((result=k.Open())>=0 && result <= GameSkin::NSMBU)
-		{
-			jMovement = (GameSkin)result;
-			entry->SetGameFunc(Keep_JMovementS);
-			entry->Enable();
-		}
-		else
-		{
-			entry->SetGameFunc(nullptr);
-			entry->Disable();
-		}
+		_Select_KeyBoard(
+			entry, 
+			Keep_JMovementS, 
+			jMovement, 
+			"Can Mario reverse on jumping\nSMM1: Disable"
+			);
 	}
 
 	void Keep_JMovementS(CTRPluginFramework::MenuEntry*)
@@ -472,19 +453,7 @@ WMstatus:
 
 	void Toggle_WallKick(CTRPluginFramework::MenuEntry* entry)
 	{
-		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
-		int result;
-		if ((result=k.Open())>=0)
-		{
-			enableWallKick = result^1;
-			entry->SetGameFunc(Keep_WallKickS);
-			entry->Enable();
-		}
-		else
-		{
-			entry->SetGameFunc(nullptr);
-			entry->Disable();
-		}
+		_Select_KeyBoard(entry, Keep_WallKickS, enableWallKick);
 	}
 
 	void Keep_WallKickS(CTRPluginFramework::MenuEntry*)
@@ -502,19 +471,7 @@ WMstatus:
 
 	void Toggle_HipAttack(CTRPluginFramework::MenuEntry* entry)
 	{
-		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
-		int result;
-		if ((result=k.Open())>=0)
-		{
-			enableHipAttack = result^1;
-			entry->SetGameFunc(Keep_HipAttackS);
-			entry->Enable();
-		}
-		else
-		{
-			entry->SetGameFunc(nullptr);
-			entry->Disable();
-		}
+		_Select_KeyBoard(entry, Keep_HipAttackS, enableHipAttack);
 	}
 
 	void Keep_HipAttackS(CTRPluginFramework::MenuEntry*)
@@ -532,19 +489,7 @@ WMstatus:
 
 	void Toggle_SwimStyle(CTRPluginFramework::MenuEntry* entry)
 	{
-		Keyboard k((std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
-		int result;
-		if ((result=k.Open())>=0 && result <= GameSkin::NSMBU)
-		{
-			swimStyle = (GameSkin)result;
-			entry->SetGameFunc(Keep_SwimStyleS);
-			entry->Enable();
-		}
-		else
-		{
-			entry->SetGameFunc(nullptr);
-			entry->Disable();
-		}
+		_Select_KeyBoard(entry, Keep_SwimStyleS, swimStyle);
 	}
 
 	void Keep_SwimStyleS(CTRPluginFramework::MenuEntry*)
@@ -558,19 +503,12 @@ WMstatus:
 
 	void Toggle_StarJump(CTRPluginFramework::MenuEntry* entry)
 	{
-		Keyboard k("Does Mario jump with rotation in star power\nNSMBU: Enable", (std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
-		int result;
-		if ((result=k.Open())>=0 && result <= GameSkin::NSMBU)
-		{
-			starjump = (GameSkin)result;
-			entry->SetGameFunc(Keep_StarJumpS);
-			entry->Enable();
-		}
-		else
-		{
-			entry->SetGameFunc(nullptr);
-			entry->Disable();
-		}
+		_Select_KeyBoard(
+			entry,
+			Keep_StarJumpS, 
+			starjump, 
+			"Does Mario jump with rotation in star power\nNSMBU: Enable"
+			);
 	}
 
 	void Keep_StarJumpS(CTRPluginFramework::MenuEntry*)
@@ -584,19 +522,7 @@ WMstatus:
 
 	void Toggle_Carry(CTRPluginFramework::MenuEntry* entry)
 	{
-		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
-		int result;
-		if ((result=k.Open())>=0)
-		{
-			enableCarry = result^1;
-			entry->SetGameFunc(Keep_CarryS);
-			entry->Enable();
-		}
-		else
-		{
-			entry->SetGameFunc(nullptr);
-			entry->Disable();
-		}
+		_Select_KeyBoard(entry, Keep_CarryS, enableCarry);
 	}
 
 	void Keep_CarryS(CTRPluginFramework::MenuEntry*)
@@ -614,19 +540,7 @@ WMstatus:
 
 	void Toggle_ThrowUp(CTRPluginFramework::MenuEntry* entry)
 	{
-		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
-		int result;
-		if ((result=k.Open())>=0)
-		{
-			enableThrowUp = result^1;
-			entry->SetGameFunc(Keep_ThrowUpS);
-			entry->Enable();
-		}
-		else
-		{
-			entry->SetGameFunc(nullptr);
-			entry->Disable();
-		}
+		_Select_KeyBoard(entry, Keep_ThrowUpS, enableThrowUp);
 	}
 
 	void Keep_ThrowUpS(CTRPluginFramework::MenuEntry*)
@@ -644,19 +558,7 @@ WMstatus:
 
 	void Toggle_LookUp(CTRPluginFramework::MenuEntry* entry)
 	{
-		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
-		int result;
-		if ((result=k.Open())>=0)
-		{
-			enableLookUp = result^1;
-			entry->SetGameFunc(Keep_LookUpS);
-			entry->Enable();
-		}
-		else
-		{
-			entry->SetGameFunc(nullptr);
-			entry->Disable();
-		}
+		_Select_KeyBoard(entry, Keep_LookUpS, enableLookUp);
 	}
 
 	void Keep_LookUpS(CTRPluginFramework::MenuEntry*)
@@ -674,19 +576,12 @@ WMstatus:
 
 	void Toggle_SpinJump(CTRPluginFramework::MenuEntry* entry)
 	{
-		Keyboard k("SMM1/SMM3: Disable\nSMW: Can't Spin on air or wall\nNSMBU: Allow all", (std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
-		int result;
-		if ((result=k.Open())>=0 && result <= GameSkin::NSMBU)
-		{
-			SpinJump = (GameSkin)result;
-			entry->SetGameFunc(Keep_SpinJumpS);
-			entry->Enable();
-		}
-		else
-		{
-			entry->SetGameFunc(nullptr);
-			entry->Disable();
-		}
+		_Select_KeyBoard(
+			entry, 
+			Keep_SpinJumpS, 
+			SpinJump, 
+			"SMM1/SMM3: Disable\nSMW: Can't Spin on air or wall\nNSMBU: Allow all"
+			);
 	}
 
 	void Keep_SpinJumpS(CTRPluginFramework::MenuEntry*)
@@ -708,6 +603,48 @@ WMstatus:
 		else
 			return false;
 		return true;
+	}
+
+
+	void _Select_KeyBoard(MenuEntry* entry, void(*Gamefunc)(MenuEntry*), GameSkin &data, const std::string &desc)
+	{
+		if (!entry)
+			return;
+		
+		Keyboard k(desc, (std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
+		if (desc.empty())
+			k.DisplayTopScreen=false;
+		int result;
+		if ((result=k.Open())>=0 && result <= GameSkin::NSMBU)
+		{
+			data = (GameSkin)result;
+			entry->SetGameFunc(Gamefunc);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
+	}
+
+	void _Select_KeyBoard(MenuEntry* entry, void(*Gamefunc)(MenuEntry*), bool &data, const std::string &desc)
+	{
+		Keyboard k(desc, (std::vector<std::string>){"Eanble", "Disable"});
+		if (desc.empty())
+			k.DisplayTopScreen=false;
+		int result;
+		if ((result=k.Open())>=0)
+		{
+			data = result^1;
+			entry->SetGameFunc(Gamefunc);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
 	}
 
 

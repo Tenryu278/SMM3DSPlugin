@@ -206,6 +206,61 @@ FONT_DU+FONT_L+": Chara Mario\n"+
             SMM3DS::Toggle_Crouch
         );
 
+        *folders[0] += new MenuEntry(
+            "Set Movement of Jump",
+            nullptr,
+            SMM3DS::Toggle_JMovement
+        );
+
+        *folders[0] += new MenuEntry(
+            "Toggle WallKick",
+            nullptr,
+            SMM3DS::Toggle_WallKick
+        );
+
+        *folders[0] += new MenuEntry(
+            "Toggle HipAttack",
+            nullptr,
+            SMM3DS::Toggle_HipAttack
+        );
+
+        *folders[0] += new MenuEntry(
+            "Set SwimStyle",
+            nullptr,
+            SMM3DS::Toggle_SwimStyle
+        );
+
+        *folders[0] += new MenuEntry(
+            "Set StarJump",
+            nullptr,
+            SMM3DS::Toggle_StarJump
+        );
+
+        *folders[0] += new MenuEntry(
+            "Toggle Carry",
+            nullptr,
+            SMM3DS::Toggle_Carry
+        );
+
+        *folders[0] += new MenuEntry(
+            "Toggle ThrowUp",
+            nullptr,
+            SMM3DS::Toggle_ThrowUp
+        );
+
+        *folders[0] += new MenuEntry(
+            "Toggle LookUp",
+            nullptr,
+            SMM3DS::Toggle_LookUp
+        );
+
+        *folders[0] += new MenuEntry(
+            "Set SpinJump",
+            nullptr,
+            SMM3DS::Toggle_SpinJump
+        );
+
+
         /*[--editor--]*/
         *folders[1] += new MenuEntry(
             "MaxScore(Editor)", 

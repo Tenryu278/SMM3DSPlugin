@@ -441,138 +441,296 @@ WMstatus:
 		Process::Write16(0x30F917B0, write);
 	}
 
+
+	GameSkin jMovement;
+
 	/// @brief 
 	/// @param  
-	void Toggle_JMovement(CTRPluginFramework::MenuEntry*)
+	void Toggle_JMovement(CTRPluginFramework::MenuEntry* entry)
 	{
-
+		Keyboard k("Can Mario reverse on jumping\nSMM1: Disable", (std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
+		int result;
+		if ((result=k.Open())>=0 && result <= GameSkin::NSMBU)
+		{
+			jMovement = (GameSkin)result;
+			entry->SetGameFunc(Keep_JMovementS);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
 	}
 
 	/// @brief 
 	/// @param  
 	void Keep_JMovementS(CTRPluginFramework::MenuEntry*)
 	{
-
+		u16 write = ((u16)(0x9B+(6*jMovement))<<8)+((jMovement==GameSkin::SMB1)? 0xC3: 0xC7);
+		Process::Write16(0x30F918D0, write);
 	}
 
 
+	bool enableWallKick;
+
 	/// @brief 
 	/// @param  
-	void Toggle_WallKick(CTRPluginFramework::MenuEntry*)
+	void Toggle_WallKick(CTRPluginFramework::MenuEntry* entry)
 	{
-
+		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
+		int result;
+		if ((result=k.Open())>=0)
+		{
+			enableWallKick = result^1;
+			entry->SetGameFunc(Keep_WallKickS);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
 	}
 
 	/// @brief 
 	/// @param  
 	void Keep_WallKickS(CTRPluginFramework::MenuEntry*)
 	{
+		u8 curskin;
+		Process::Read8(0x305A0FFC, curskin);
+		curskin = 0x9B+(6*curskin);
 
+		u16 write=(curskin<<8)+((u16)enableWallKick*0x04+0xC3);
+		Process::Write16(0x30F919F0, write);
 	}
 
 
+	bool enableHipAttack;
+
 	/// @brief 
 	/// @param  
-	void Toggle_HipAttack(CTRPluginFramework::MenuEntry*)
+	void Toggle_HipAttack(CTRPluginFramework::MenuEntry* entry)
 	{
-
+		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
+		int result;
+		if ((result=k.Open())>=0)
+		{
+			enableHipAttack = result^1;
+			entry->SetGameFunc(Keep_HipAttackS);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
 	}
 
 	/// @brief 
 	/// @param  
 	void Keep_HipAttackS(CTRPluginFramework::MenuEntry*)
 	{
+		u8 curskin;
+		Process::Read8(0x305A0FFC, curskin);
+		curskin = 0x9B+(6*curskin);
 
+		u16 write=(curskin<<8)+((u16)enableHipAttack*0x04+0xC3);
+		Process::Write16(0x30F91B10, write);
 	}
 
 
+	GameSkin swimStyle;
+
 	/// @brief 
 	/// @param  
-	void Toggle_SwimStyle(CTRPluginFramework::MenuEntry*)
+	void Toggle_SwimStyle(CTRPluginFramework::MenuEntry* entry)
 	{
-
+		Keyboard k((std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
+		int result;
+		if ((result=k.Open())>=0 && result <= GameSkin::NSMBU)
+		{
+			swimStyle = (GameSkin)result;
+			entry->SetGameFunc(Keep_SwimStyleS);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
 	}
 
 	/// @brief 
 	/// @param  
 	void Keep_SwimStyleS(CTRPluginFramework::MenuEntry*)
 	{
-
+		u16 write = ((u16)(0x9B+(6*swimStyle))<<8)+((swimStyle==GameSkin::NSMBU)? 0xC7: 0xC3);
+		Process::Write16(0x30F91C30, write);
 	}
 
 
+	GameSkin starjump;
+
 	/// @brief 
 	/// @param  
-	void Toggle_StarJump(CTRPluginFramework::MenuEntry*)
+	void Toggle_StarJump(CTRPluginFramework::MenuEntry* entry)
 	{
-
+		Keyboard k("Does Mario jump with rotation in star power\nNSMBU: Enable", (std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
+		int result;
+		if ((result=k.Open())>=0 && result <= GameSkin::NSMBU)
+		{
+			starjump = (GameSkin)result;
+			entry->SetGameFunc(Keep_StarJumpS);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
 	}
 
 	/// @brief 
 	/// @param  
 	void Keep_StarJumpS(CTRPluginFramework::MenuEntry*)
 	{
-
+		u16 write = ((u16)(0x9B+(6*starjump))<<8)+((starjump==GameSkin::NSMBU)? 0xC7: 0xC3);
+		Process::Write16(0x30F91D50, write);
 	}
 
 
+	bool enableCarry;
+
 	/// @brief 
 	/// @param  
-	void Toggle_Carry(CTRPluginFramework::MenuEntry*)
+	void Toggle_Carry(CTRPluginFramework::MenuEntry* entry)
 	{
-
+		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
+		int result;
+		if ((result=k.Open())>=0)
+		{
+			enableCarry = result^1;
+			entry->SetGameFunc(Keep_CarryS);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
 	}
 
 	/// @brief 
 	/// @param  
 	void Keep_CarryS(CTRPluginFramework::MenuEntry*)
 	{
-		
+		u8 curskin;
+		Process::Read8(0x305A0FFC, curskin);
+		curskin = 0x9B+(6*curskin);
+
+		u16 write=(curskin<<8)+((u16)enableCarry*0x04+0xC3);
+		Process::Write16(0x30F91E70, write);
 	}
 
 
+	bool enableThrowUp;
+
 	/// @brief 
 	/// @param  
-	void Toggle_ThrowUp(CTRPluginFramework::MenuEntry*)
+	void Toggle_ThrowUp(CTRPluginFramework::MenuEntry* entry)
 	{
-
+		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
+		int result;
+		if ((result=k.Open())>=0)
+		{
+			enableThrowUp = result^1;
+			entry->SetGameFunc(Keep_ThrowUpS);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
 	}
 
 	/// @brief 
 	/// @param  
 	void Keep_ThrowUpS(CTRPluginFramework::MenuEntry*)
 	{
+		u8 curskin;
+		Process::Read8(0x305A0FFC, curskin);
+		curskin = 0x9B+(6*curskin);
 
+		u16 write=(curskin<<8)+((u16)enableThrowUp*0x04+0xC3);
+		Process::Write16(0x30F91F90, write);
 	}
 
 
+	bool enableLookUp;
+
 	/// @brief 
 	/// @param  
-	void Toggle_LookUp(CTRPluginFramework::MenuEntry*)
+	void Toggle_LookUp(CTRPluginFramework::MenuEntry* entry)
 	{
-
+		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
+		int result;
+		if ((result=k.Open())>=0)
+		{
+			enableLookUp = result^1;
+			entry->SetGameFunc(Keep_LookUpS);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
 	}
 
 	/// @brief 
 	/// @param  
 	void Keep_LookUpS(CTRPluginFramework::MenuEntry*)
 	{
+		u8 curskin;
+		Process::Read8(0x305A0FFC, curskin);
+		curskin = 0x9B+(6*curskin);
 
+		u16 write=(curskin<<8)+((u16)enableLookUp*0x04+0xC3);
+		Process::Write16(0x30F920B0, write);
 	}
 
 
+	GameSkin SpinJump;
+
 	/// @brief 
 	/// @param  
-	void Toggle_SpinJump(CTRPluginFramework::MenuEntry*)
+	void Toggle_SpinJump(CTRPluginFramework::MenuEntry* entry)
 	{
-
+		Keyboard k("SMM1/SMM3: Disable\nSMW: Can't Spin on air or wall\nNSMBU: Allow all", (std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
+		int result;
+		if ((result=k.Open())>=0 && result <= GameSkin::NSMBU)
+		{
+			SpinJump = (GameSkin)result;
+			entry->SetGameFunc(Keep_SpinJumpS);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
 	}
 
 	/// @brief 
 	/// @param  
 	void Keep_SpinJumpS(CTRPluginFramework::MenuEntry*)
 	{
-		
+		u16 write = ((u16)(0x9B+(6*SpinJump))<<8)+0xC3;
+
+		Process::Write16(0x30F921D0, write+(0x04*(SpinJump==NSMBU))); //wu_spinjump is allows spin on air or wall
+		Process::Write16(0x30F922F0, write+(0x04*(SpinJump==SMW))); //mw_spinjump
 	}
 
 

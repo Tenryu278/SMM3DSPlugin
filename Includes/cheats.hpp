@@ -311,6 +311,6 @@ namespace SMM3DS
 	///	If not selected, returns -1 (cancel) or -2 (cancel bacause sleeping).
 	/// @param current Current Scene Skin. Defalt is Ground.
 	/// @return True is success, False is none
-	bool _SetSceneSkin(u8 &result, const u8 &current = 0);
+	bool _SetSceneSkin(u8 &result, u8 current = 0);
 }
 #endif

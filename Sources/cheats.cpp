@@ -698,7 +698,7 @@ WMstatus:
 	}
 
 
-	bool _SetSceneSkin(u8 &result, const u8 &current)
+	bool _SetSceneSkin(u8 &result, u8 current)
 	{
 		const std::vector<std::string> SceneSkins = {
 			Color::Green << "Ground",

@@ -323,16 +323,16 @@ namespace SMM3DS
 			return;
 		*/
 		
-		u8 curskin = 0;
+		GameSkin curskin;
 		PowerUp result;
 
 		//Special PowerUps depend on game skin
 		PowerUp RD, LD = Big, LU = Chara;
-		/**
-		 * Read the current game skin. This is incomplete
-		 */
-		Process::Read8(0x305A0FFC, curskin);
-		switch ((GameSkin)curskin)
+
+		if (!GetGameSkin(curskin))
+			return;
+		
+		switch (curskin)
 		{
 		case SMB1:
 			RD = PowerUp::Weird;
@@ -433,11 +433,11 @@ WMstatus:
 		 * a byte of last is status of this element
 		 * C3:Disable  C7:Enable
 		 */				
-		u8 curskin;
-		Process::Read8(0x305A0FFC, curskin);
-		curskin = 0x9B+(6*curskin);
+		GameSkin curskin;
+		if (!GetGameSkin(curskin))
+			return;
 
-		u16 write=(curskin<<8)+((u16)enableCrouch*0x04+0xC3);
+		u16 write=((0x9B+(6*curskin))<<8)+((u16)enableCrouch*0x04+0xC3);
 		Process::Write16(0x30F917B0, write);
 	}
 
@@ -489,11 +489,11 @@ WMstatus:
 
 	void Keep_WallKickS(CTRPluginFramework::MenuEntry*)
 	{
-		u8 curskin;
-		Process::Read8(0x305A0FFC, curskin);
-		curskin = 0x9B+(6*curskin);
+		GameSkin curskin;
+		if (!GetGameSkin(curskin))
+			return;
 
-		u16 write=(curskin<<8)+((u16)enableWallKick*0x04+0xC3);
+		u16 write=((0x9B+(6*curskin))<<8)+((u16)enableWallKick*0x04+0xC3);
 		Process::Write16(0x30F919F0, write);
 	}
 
@@ -519,11 +519,11 @@ WMstatus:
 
 	void Keep_HipAttackS(CTRPluginFramework::MenuEntry*)
 	{
-		u8 curskin;
-		Process::Read8(0x305A0FFC, curskin);
-		curskin = 0x9B+(6*curskin);
+		GameSkin curskin;
+		if (!GetGameSkin(curskin))
+			return;
 
-		u16 write=(curskin<<8)+((u16)enableHipAttack*0x04+0xC3);
+		u16 write=((0x9B+(6*curskin))<<8)+((u16)enableHipAttack*0x04+0xC3);
 		Process::Write16(0x30F91B10, write);
 	}
 
@@ -601,11 +601,11 @@ WMstatus:
 
 	void Keep_CarryS(CTRPluginFramework::MenuEntry*)
 	{
-		u8 curskin;
-		Process::Read8(0x305A0FFC, curskin);
-		curskin = 0x9B+(6*curskin);
+		GameSkin curskin;
+		if (!GetGameSkin(curskin))
+			return;
 
-		u16 write=(curskin<<8)+((u16)enableCarry*0x04+0xC3);
+		u16 write=((0x9B+(6*curskin))<<8)+((u16)enableCarry*0x04+0xC3);
 		Process::Write16(0x30F91E70, write);
 	}
 
@@ -631,11 +631,11 @@ WMstatus:
 
 	void Keep_ThrowUpS(CTRPluginFramework::MenuEntry*)
 	{
-		u8 curskin;
-		Process::Read8(0x305A0FFC, curskin);
-		curskin = 0x9B+(6*curskin);
+		GameSkin curskin;
+		if (!GetGameSkin(curskin))
+			return;
 
-		u16 write=(curskin<<8)+((u16)enableThrowUp*0x04+0xC3);
+		u16 write=((0x9B+(6*curskin))<<8)+((u16)enableThrowUp*0x04+0xC3);
 		Process::Write16(0x30F91F90, write);
 	}
 
@@ -661,11 +661,11 @@ WMstatus:
 
 	void Keep_LookUpS(CTRPluginFramework::MenuEntry*)
 	{
-		u8 curskin;
-		Process::Read8(0x305A0FFC, curskin);
-		curskin = 0x9B+(6*curskin);
+		GameSkin curskin;
+		if (!GetGameSkin(curskin))
+			return;
 
-		u16 write=(curskin<<8)+((u16)enableLookUp*0x04+0xC3);
+		u16 write=((0x9B+(6*curskin))<<8)+((u16)enableLookUp*0x04+0xC3);
 		Process::Write16(0x30F920B0, write);
 	}
 

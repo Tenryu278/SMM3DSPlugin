@@ -63,6 +63,21 @@ namespace SMM3DS
 		return (tid==TitleID::JPN||tid==TitleID::USA||tid==TitleID::EUR);
 	}
 
+	/// @brief Read the current game skin. This is incomplete
+	/// @param result Reference to GameSkin object
+	/// @return True if success, false otherwise
+	inline bool GetGameSkin(GameSkin &result)
+	{
+		u8 tmp;
+		if (!CTRPluginFramework::Process::Read8(0x305A0FFC, tmp))
+			return false;
+		if (result>=0 && result <= GameSkin::NSMBU)
+			result = (GameSkin)tmp;
+		else
+			return false;
+		return true;
+	}
+
 
 	//visible max score
 	constexpr u32 maxscore = 999999990;

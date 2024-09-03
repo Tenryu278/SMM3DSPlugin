@@ -2,7 +2,7 @@
 
 [![Makefile CI](https://github.com/Tenryu278/SMM3DSPlugin/actions/workflows/makefile.yml/badge.svg)](https://github.com/Tenryu278/SMM3DSPlugin/actions/workflows/makefile.yml)
 
-This plugin only runs on Super Mario Maker for Nintendo 3DS.
+This plugin supported only Super Mario Maker for Nintendo 3DS.
 
 -----------------------------------------------
 
@@ -55,7 +55,7 @@ For Example:
 - [libctrpf](https://gitlab.com/thepixellizeross/ctrpluginframework) by [The Pixellizer Group](https://gitlab.com/thepixellizeross)
 - [3gxtool](https://gitlab.com/thepixellizeross/3gxtool) by [The Pixellizer Group](https://gitlab.com/thepixellizeross)
 
-Source codes were clone from [CTRPluginFramework-BlankTemplate](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate).
+Source code is mirrored from [CTRPluginFramework-BlankTemplate](https://github.com/PabloMK7/CTRPluginFramework-BlankTemplate).
 
 
 # License

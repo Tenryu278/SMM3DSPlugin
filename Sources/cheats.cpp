@@ -444,8 +444,6 @@ WMstatus:
 
 	GameSkin jMovement;
 
-	/// @brief 
-	/// @param  
 	void Toggle_JMovement(CTRPluginFramework::MenuEntry* entry)
 	{
 		Keyboard k("Can Mario reverse on jumping\nSMM1: Disable", (std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
@@ -463,8 +461,6 @@ WMstatus:
 		}
 	}
 
-	/// @brief 
-	/// @param  
 	void Keep_JMovementS(CTRPluginFramework::MenuEntry*)
 	{
 		u16 write = ((u16)(0x9B+(6*jMovement))<<8)+((jMovement==GameSkin::SMB1)? 0xC3: 0xC7);
@@ -474,8 +470,6 @@ WMstatus:
 
 	bool enableWallKick;
 
-	/// @brief 
-	/// @param  
 	void Toggle_WallKick(CTRPluginFramework::MenuEntry* entry)
 	{
 		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
@@ -493,8 +487,6 @@ WMstatus:
 		}
 	}
 
-	/// @brief 
-	/// @param  
 	void Keep_WallKickS(CTRPluginFramework::MenuEntry*)
 	{
 		u8 curskin;
@@ -508,8 +500,6 @@ WMstatus:
 
 	bool enableHipAttack;
 
-	/// @brief 
-	/// @param  
 	void Toggle_HipAttack(CTRPluginFramework::MenuEntry* entry)
 	{
 		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
@@ -527,8 +517,6 @@ WMstatus:
 		}
 	}
 
-	/// @brief 
-	/// @param  
 	void Keep_HipAttackS(CTRPluginFramework::MenuEntry*)
 	{
 		u8 curskin;
@@ -542,8 +530,6 @@ WMstatus:
 
 	GameSkin swimStyle;
 
-	/// @brief 
-	/// @param  
 	void Toggle_SwimStyle(CTRPluginFramework::MenuEntry* entry)
 	{
 		Keyboard k((std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
@@ -561,8 +547,6 @@ WMstatus:
 		}
 	}
 
-	/// @brief 
-	/// @param  
 	void Keep_SwimStyleS(CTRPluginFramework::MenuEntry*)
 	{
 		u16 write = ((u16)(0x9B+(6*swimStyle))<<8)+((swimStyle==GameSkin::NSMBU)? 0xC7: 0xC3);
@@ -572,8 +556,6 @@ WMstatus:
 
 	GameSkin starjump;
 
-	/// @brief 
-	/// @param  
 	void Toggle_StarJump(CTRPluginFramework::MenuEntry* entry)
 	{
 		Keyboard k("Does Mario jump with rotation in star power\nNSMBU: Enable", (std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
@@ -591,8 +573,6 @@ WMstatus:
 		}
 	}
 
-	/// @brief 
-	/// @param  
 	void Keep_StarJumpS(CTRPluginFramework::MenuEntry*)
 	{
 		u16 write = ((u16)(0x9B+(6*starjump))<<8)+((starjump==GameSkin::NSMBU)? 0xC7: 0xC3);
@@ -602,8 +582,6 @@ WMstatus:
 
 	bool enableCarry;
 
-	/// @brief 
-	/// @param  
 	void Toggle_Carry(CTRPluginFramework::MenuEntry* entry)
 	{
 		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
@@ -621,8 +599,6 @@ WMstatus:
 		}
 	}
 
-	/// @brief 
-	/// @param  
 	void Keep_CarryS(CTRPluginFramework::MenuEntry*)
 	{
 		u8 curskin;
@@ -636,8 +612,6 @@ WMstatus:
 
 	bool enableThrowUp;
 
-	/// @brief 
-	/// @param  
 	void Toggle_ThrowUp(CTRPluginFramework::MenuEntry* entry)
 	{
 		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
@@ -655,8 +629,6 @@ WMstatus:
 		}
 	}
 
-	/// @brief 
-	/// @param  
 	void Keep_ThrowUpS(CTRPluginFramework::MenuEntry*)
 	{
 		u8 curskin;
@@ -670,8 +642,6 @@ WMstatus:
 
 	bool enableLookUp;
 
-	/// @brief 
-	/// @param  
 	void Toggle_LookUp(CTRPluginFramework::MenuEntry* entry)
 	{
 		Keyboard k((std::vector<std::string>){"Enable", "Disable"});
@@ -689,8 +659,6 @@ WMstatus:
 		}
 	}
 
-	/// @brief 
-	/// @param  
 	void Keep_LookUpS(CTRPluginFramework::MenuEntry*)
 	{
 		u8 curskin;
@@ -704,8 +672,6 @@ WMstatus:
 
 	GameSkin SpinJump;
 
-	/// @brief 
-	/// @param  
 	void Toggle_SpinJump(CTRPluginFramework::MenuEntry* entry)
 	{
 		Keyboard k("SMM1/SMM3: Disable\nSMW: Can't Spin on air or wall\nNSMBU: Allow all", (std::vector<std::string>){"SMM1", "SMM3", "SMW", "NSMBU"});
@@ -723,8 +689,6 @@ WMstatus:
 		}
 	}
 
-	/// @brief 
-	/// @param  
 	void Keep_SpinJumpS(CTRPluginFramework::MenuEntry*)
 	{
 		u16 write = ((u16)(0x9B+(6*SpinJump))<<8)+0xC3;

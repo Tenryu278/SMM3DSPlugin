@@ -55,6 +55,17 @@ namespace SMM3DS
 		EUR = 0x00040000001A0500
 	};
 
+
+	//visible max score
+	constexpr u32 maxscore = 999999990;
+
+	//visible max time
+	constexpr u16 maxtime = 999;
+
+	//visible max coin
+	constexpr u8 maxcoin = 99;
+
+
 	/// @brief Check current game is SMM3DS
 	/// @param tid Title ID 
 	/// @return 
@@ -77,16 +88,6 @@ namespace SMM3DS
 			return false;
 		return true;
 	}
-
-
-	//visible max score
-	constexpr u32 maxscore = 999999990;
-
-	//visible max time
-	constexpr u16 maxtime = 999;
-
-	//visible max coin
-	constexpr u8 maxcoin = 99;
 
 
 	/// @brief Set score on keyboard

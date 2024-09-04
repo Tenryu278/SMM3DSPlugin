@@ -20,10 +20,28 @@ It may doesn't working well on other console or emulator
 > You need a hacked 3ds console. See more [3ds Hacks Guide](https://3ds.hacks.guide/).
 
 ## For 3DS
-Open your SD card and copy built 3gx file to `sdmc/luma/Plugins/{TitleID}`.
+1. Open your SD card and copy built 3gx file to `sd:/luma/Plugins/{TitleID}/`.
+
+2. Boot 3ds after mount SD card.
+
+3. Press `L+DPad-Down+Select` to Open Rosalina menu and enable PluginLoader.
+
+4. Done! You successful to installing if display notification of **Plugin Ready!** when launched game.
 
 ## For [Citra](https://github.com/PabloMK7/citra)
-Launch to click **Open Citra Folder** from File tab and copy built 3gx file to `sdmc/luma/Plugins/{TitleID}`.
+1. Launch Citra
+
+2. Select **Open Citra Folder** from File tab.
+
+3. Copy built 3gx file to `sdmc/luma/Plugins/{TitleID}/`.
+
+4. Open Citra Configuration and Check to **Enable 3GX plugin loader** from System tab.
+
+### What is TitleID
+
+A specific ID to identify the game. It's different by region.
+
+The TitleID of SMM3DS is:
 
 - JPN: `00040000001A0300`
 - USA: `00040000001A0400`

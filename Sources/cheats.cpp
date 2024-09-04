@@ -631,6 +631,14 @@ WMstatus:
 	}
 
 
+	void CameraSyncMario(MenuEntry*)
+	{
+		float pos;
+		Process::ReadFloat(0x317B87DC, pos); //Mario Y pos
+		Process::WriteFloat(0x31490398, pos); //Camera Y pos
+	}
+
+
 	bool GetGameSkin(GameSkin &result)
 	{
 		u8 tmp;

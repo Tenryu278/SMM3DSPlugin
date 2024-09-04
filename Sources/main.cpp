@@ -206,7 +206,7 @@ FONT_DU+FONT_L+": Chara Mario\n"+
         *playing += new MenuEntry(
             "MidAir Crouch Jump",
             SMM3DS::ptr_JumpMD_Crouch,
-            "You can jump in mid air but any jumps will be with crouching while enable this code"
+            "You can jump in mid air but any jumps will be with crouching while enable this code\nRecommend to use with Sync camera"
         );
 
         *playing += new MenuEntry(
@@ -279,6 +279,12 @@ FONT_DU+FONT_L+": Chara Mario\n"+
             "Set SpinJump",
             nullptr,
             SMM3DS::Toggle_SpinJump
+        );
+
+        *playing += new MenuEntry(
+            "Sync Camera",
+            SMM3DS::CameraSyncMario,
+            "Moving camera in sync with Mario's Y position while enable this code"
         );
 
 

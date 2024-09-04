@@ -300,6 +300,9 @@ namespace SMM3DS
 	/// @brief 
 	/// @param  
 	void Keep_SpinJumpS(CTRPluginFramework::MenuEntry*);
+
+
+	void CameraSyncMario(CTRPluginFramework::MenuEntry*);
 	
 
 	/// @brief Read the current game skin. This is incomplete

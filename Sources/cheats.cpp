@@ -174,7 +174,7 @@ namespace SMM3DS
 
 	u8 sceneSkin_TiBGM;
 
-	void SetSceneSkin_TiBGM(CTRPluginFramework::MenuEntry* entry)
+	void SetSceneSkin_TiBGM(MenuEntry* entry)
 	{
 		u8 current, result;
 		Process::Read8(0x305A1010, current);
@@ -191,7 +191,7 @@ namespace SMM3DS
 		}
 	}
 
-	void KeepSceneSkin_TiBGM(CTRPluginFramework::MenuEntry*)
+	void KeepSceneSkin_TiBGM(MenuEntry*)
 	{
 		Process::Write8(0x305A1010, sceneSkin_TiBGM);
 	}
@@ -431,13 +431,13 @@ WMstatus:
 	}
 
 
-	void ptr_JumpDisable(CTRPluginFramework::MenuEntry*)
+	void ptr_JumpDisable(MenuEntry*)
 	{
 		Process::Write32(0x317B9DDC, 0x317D7810);
 	}
 
 
-	void ptr_CrouchDisable(CTRPluginFramework::MenuEntry*)
+	void ptr_CrouchDisable(MenuEntry*)
 	{
 		Process::Write32(0x317B9DE0, 0x317D7810);
 	}
@@ -470,7 +470,7 @@ WMstatus:
 
 	GameSkin jMovement;
 
-	void Toggle_JMovement(CTRPluginFramework::MenuEntry* entry)
+	void Toggle_JMovement(MenuEntry* entry)
 	{
 		_Select_KeyBoard(
 			entry, 
@@ -480,7 +480,7 @@ WMstatus:
 			);
 	}
 
-	void Keep_JMovementS(CTRPluginFramework::MenuEntry*)
+	void Keep_JMovementS(MenuEntry*)
 	{
 		u16 write = ((u16)(0x9B+(6*jMovement))<<8)+((jMovement==GameSkin::SMB1)? 0xC3: 0xC7);
 		Process::Write16(0x30F918D0, write);
@@ -489,12 +489,12 @@ WMstatus:
 
 	bool enableWallKick;
 
-	void Toggle_WallKick(CTRPluginFramework::MenuEntry* entry)
+	void Toggle_WallKick(MenuEntry* entry)
 	{
 		_Select_KeyBoard(entry, Keep_WallKickS, enableWallKick);
 	}
 
-	void Keep_WallKickS(CTRPluginFramework::MenuEntry*)
+	void Keep_WallKickS(MenuEntry*)
 	{
 		GameSkin curskin;
 		if (!GetGameSkin(curskin))
@@ -507,12 +507,12 @@ WMstatus:
 
 	bool enableHipAttack;
 
-	void Toggle_HipAttack(CTRPluginFramework::MenuEntry* entry)
+	void Toggle_HipAttack(MenuEntry* entry)
 	{
 		_Select_KeyBoard(entry, Keep_HipAttackS, enableHipAttack);
 	}
 
-	void Keep_HipAttackS(CTRPluginFramework::MenuEntry*)
+	void Keep_HipAttackS(MenuEntry*)
 	{
 		GameSkin curskin;
 		if (!GetGameSkin(curskin))
@@ -525,12 +525,12 @@ WMstatus:
 
 	GameSkin swimStyle;
 
-	void Toggle_SwimStyle(CTRPluginFramework::MenuEntry* entry)
+	void Toggle_SwimStyle(MenuEntry* entry)
 	{
 		_Select_KeyBoard(entry, Keep_SwimStyleS, swimStyle);
 	}
 
-	void Keep_SwimStyleS(CTRPluginFramework::MenuEntry*)
+	void Keep_SwimStyleS(MenuEntry*)
 	{
 		u16 write = ((u16)(0x9B+(6*swimStyle))<<8)+((swimStyle==GameSkin::NSMBU)? 0xC7: 0xC3);
 		Process::Write16(0x30F91C30, write);
@@ -539,7 +539,7 @@ WMstatus:
 
 	GameSkin starjump;
 
-	void Toggle_StarJump(CTRPluginFramework::MenuEntry* entry)
+	void Toggle_StarJump(MenuEntry* entry)
 	{
 		_Select_KeyBoard(
 			entry,
@@ -549,7 +549,7 @@ WMstatus:
 			);
 	}
 
-	void Keep_StarJumpS(CTRPluginFramework::MenuEntry*)
+	void Keep_StarJumpS(MenuEntry*)
 	{
 		u16 write = ((u16)(0x9B+(6*starjump))<<8)+((starjump==GameSkin::NSMBU)? 0xC7: 0xC3);
 		Process::Write16(0x30F91D50, write);
@@ -558,12 +558,12 @@ WMstatus:
 
 	bool enableCarry;
 
-	void Toggle_Carry(CTRPluginFramework::MenuEntry* entry)
+	void Toggle_Carry(MenuEntry* entry)
 	{
 		_Select_KeyBoard(entry, Keep_CarryS, enableCarry);
 	}
 
-	void Keep_CarryS(CTRPluginFramework::MenuEntry*)
+	void Keep_CarryS(MenuEntry*)
 	{
 		GameSkin curskin;
 		if (!GetGameSkin(curskin))
@@ -576,12 +576,12 @@ WMstatus:
 
 	bool enableThrowUp;
 
-	void Toggle_ThrowUp(CTRPluginFramework::MenuEntry* entry)
+	void Toggle_ThrowUp(MenuEntry* entry)
 	{
 		_Select_KeyBoard(entry, Keep_ThrowUpS, enableThrowUp);
 	}
 
-	void Keep_ThrowUpS(CTRPluginFramework::MenuEntry*)
+	void Keep_ThrowUpS(MenuEntry*)
 	{
 		GameSkin curskin;
 		if (!GetGameSkin(curskin))
@@ -594,12 +594,12 @@ WMstatus:
 
 	bool enableLookUp;
 
-	void Toggle_LookUp(CTRPluginFramework::MenuEntry* entry)
+	void Toggle_LookUp(MenuEntry* entry)
 	{
 		_Select_KeyBoard(entry, Keep_LookUpS, enableLookUp);
 	}
 
-	void Keep_LookUpS(CTRPluginFramework::MenuEntry*)
+	void Keep_LookUpS(MenuEntry*)
 	{
 		GameSkin curskin;
 		if (!GetGameSkin(curskin))
@@ -612,7 +612,7 @@ WMstatus:
 
 	GameSkin SpinJump;
 
-	void Toggle_SpinJump(CTRPluginFramework::MenuEntry* entry)
+	void Toggle_SpinJump(MenuEntry* entry)
 	{
 		_Select_KeyBoard(
 			entry, 
@@ -622,7 +622,7 @@ WMstatus:
 			);
 	}
 
-	void Keep_SpinJumpS(CTRPluginFramework::MenuEntry*)
+	void Keep_SpinJumpS(MenuEntry*)
 	{
 		u16 write = ((u16)(0x9B+(6*SpinJump))<<8)+0xC3;
 
@@ -634,7 +634,7 @@ WMstatus:
 	bool GetGameSkin(GameSkin &result)
 	{
 		u8 tmp;
-		if (!CTRPluginFramework::Process::Read8(0x305A0FFC, tmp))
+		if (!Process::Read8(0x305A0FFC, tmp))
 			return false;
 		if (result>=0 && result <= GameSkin::NSMBU)
 			result = (GameSkin)tmp;

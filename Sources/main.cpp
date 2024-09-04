@@ -68,86 +68,88 @@ exit:
     }	
 	
     // Init our menu entries & folders
-	void InitMenu(PluginMenu &menu, std::vector<MenuFolder*> &folders)
+	void InitMenu(PluginMenu &menu)
 	{   
-        if (folders.size() != 2)
-            return;
+        MenuFolder* playing = new MenuFolder(
+            "PlayingCodes", 
+            "These code are valid on playing mode."
+        );
+        
+        MenuFolder* editor = new MenuFolder(
+            "EditorCodes", 
+            "These code are valid on editor mode."
+        );
 
-        //Add folders
-        for (size_t i = 0; i < folders.size(); i++)
-        {
-            if (folders[i] == nullptr)
-                return;
-            menu += folders[i];
-        }
+        menu += playing;
+        menu += editor;
         
         /*[--play--]*/
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Set Score", 
             nullptr, 
             SMM3DS::InitScore,
             "Press keyboard to change score\nPress checkbox to keep score"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Set Time", 
             nullptr, 
             SMM3DS::InitTime, 
             "Press keyboard to change time\nPress checkbox to keep time"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             Color::Yellow << "Set Coin",
             nullptr,
             SMM3DS::InitCoin,
             "Press keyboard to change coin\nPress checkbox to keep coin"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Set Auto Scroll",
             nullptr,
             SMM3DS::SetAutoScroll,
             "Set auto scroll.\nThis code is valid on both editor mode and play mode."
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Enable Scrolling UP",
             SMM3DS::EnableScrollUp
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Change Scene Skin",
             nullptr,
             SMM3DS::SetSceneSkin,
             "Change Scene skin"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Change Scene Skin(Tile and BGM only)",
             nullptr,
             SMM3DS::SetSceneSkin_TiBGM,
             Color::Blue<<"Note: Process will be slow while enable this cheat"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Change footsteps",
             nullptr,
             SMM3DS::SetFootSteps,
             "Change footstep sounds\nPress checkbox to keep\nThis code is valid on both editor mode and play mode."
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Invincible",
             SMM3DS::Invincible
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Always Star Power",
             SMM3DS::StarPower,
             "This doesn't working for graphics"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Set Mario's lives",
             nullptr,
             SMM3DS::InitLives,
@@ -155,26 +157,26 @@ exit:
             (Color::Blue<<"Note: If you lives is below 0, you'll be GameOver when quit cource")
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Disable Helper mode",
             SMM3DS::DisableHelper,
             "Disable helper mode on Super Mario Challenge \nMistakes count will always be 0"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Faster",
             SMM3DS::Faster,
             "If C-pad(or D-pad) is not pressed, you'll stop immediately"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Damage to become ...",
             nullptr,
             SMM3DS::SetDamageToBecome,
             Color::Blue<<"Note: This doesn't work for small Mario"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "ItemCheat",
             SMM3DS::ItemCheatAuto,
             (std::string)"---Usage---\n"+
@@ -189,79 +191,79 @@ FONT_DU+FONT_L+": Chara Mario\n"+
 (Color::Blue<<"Note: This is incomplete so it may doesn't working well")
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "AutoJump", 
             SMM3DS::AutoJump, 
             "Mario always jumping while enable this code"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "ForceCrouch",
             SMM3DS::ForceCrouch,
             "Mario always crouching while enable this code"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "MidAir Crouch Jump",
             SMM3DS::MidAirCrouch,
             "You can jump in mid air but any jumps will be with crouching while enable this code"
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Toggle Crouch",
             nullptr,
             SMM3DS::Toggle_Crouch
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Set Movement of Jump",
             nullptr,
             SMM3DS::Toggle_JMovement
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Toggle WallKick",
             nullptr,
             SMM3DS::Toggle_WallKick
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Toggle HipAttack",
             nullptr,
             SMM3DS::Toggle_HipAttack
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Set SwimStyle",
             nullptr,
             SMM3DS::Toggle_SwimStyle
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Set StarJump",
             nullptr,
             SMM3DS::Toggle_StarJump
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Toggle Carry",
             nullptr,
             SMM3DS::Toggle_Carry
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Toggle ThrowUp",
             nullptr,
             SMM3DS::Toggle_ThrowUp
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Toggle LookUp",
             nullptr,
             SMM3DS::Toggle_LookUp
         );
 
-        *folders[0] += new MenuEntry(
+        *playing += new MenuEntry(
             "Set SpinJump",
             nullptr,
             SMM3DS::Toggle_SpinJump
@@ -269,7 +271,7 @@ FONT_DU+FONT_L+": Chara Mario\n"+
 
 
         /*[--editor--]*/
-        *folders[1] += new MenuEntry(
+        *editor += new MenuEntry(
             "MaxScore(Editor)", 
             SMM3DS::Editor_ScoreMax, 
             "Keep max score(" + std::to_string(SMM3DS::maxscore) + ") \nThis code can use only EditorMode."
@@ -302,22 +304,10 @@ Copyright (c) 2024 Tenryu278)"
         // Synchronize the menu with frame event
         menu->SynchronizeWithFrame(true);
 
-        MenuFolder play(
-            "PlayingCodes", 
-            "These code are valid on playing."
-        );
-        
-        MenuFolder editor(
-            "EditorCodes", 
-            "These code are valid on editor mode."
-        );
-
-        std::vector<MenuFolder*> folders = {&play, &editor};
-
         if (SMM3DS::IsSMM3DS(Process::GetTitleID()))
         {
             // Init our menu entries & folders
-            InitMenu(*menu, folders);
+            InitMenu(*menu);
         }
         else
             OSD::Notify("This Plugin does not supported on this game.", Color::Red);

@@ -303,6 +303,9 @@ namespace SMM3DS
 
 
 	void CameraSyncMario(CTRPluginFramework::MenuEntry*);
+
+
+	void Editor_SaveTime(CTRPluginFramework::MenuEntry*);
 	
 
 	/// @brief Read the current game skin. This is incomplete

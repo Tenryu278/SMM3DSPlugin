@@ -638,6 +638,18 @@ WMstatus:
 		Process::WriteFloat(0x31490398, pos); //Camera Y pos
 	}
 
+	void Editor_SaveTime(MenuEntry*)
+	{
+		u16 start, result;
+		Process::Read16(0x304CB9B8, start);
+		Keyboard k("Enter time you want to ...");
+		k.IsHexadecimal(false);
+		if (k.Open(result, start)==0)
+		{
+			Process::Write16(0x304CB9B8, result);
+		}
+	}
+
 
 	bool GetGameSkin(GameSkin &result)
 	{

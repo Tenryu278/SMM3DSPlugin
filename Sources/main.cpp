@@ -294,6 +294,13 @@ FONT_DU+FONT_L+": Chara Mario\n"+
             SMM3DS::Editor_ScoreMax, 
             "Keep max score(" + std::to_string(SMM3DS::maxscore) + ") \nThis code can use only EditorMode."
         );
+
+        *editor += new MenuEntry(
+            "Change time(Savable)",
+            nullptr,
+            SMM3DS::Editor_SaveTime,
+            "It will works when started course after enable this cheat"
+        );
         
         /*root*/
 

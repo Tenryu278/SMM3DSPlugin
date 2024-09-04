@@ -431,6 +431,18 @@ WMstatus:
 	}
 
 
+	void ptr_JumpDisable(CTRPluginFramework::MenuEntry*)
+	{
+		Process::Write32(0x317B9DDC, 0x317D7810);
+	}
+
+
+	void ptr_CrouchDisable(CTRPluginFramework::MenuEntry*)
+	{
+		Process::Write32(0x317B9DE0, 0x317D7810);
+	}
+
+
 	bool enableCrouch;
 
 	void Toggle_Crouch(MenuEntry* entry)

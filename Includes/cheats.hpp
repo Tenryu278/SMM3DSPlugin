@@ -206,6 +206,12 @@ namespace SMM3DS
 	void MidAirCrouch(CTRPluginFramework::MenuEntry*);
 
 
+	void ptr_JumpDisable(CTRPluginFramework::MenuEntry*);
+
+
+	void ptr_CrouchDisable(CTRPluginFramework::MenuEntry*);
+
+
 	/// @brief 
 	/// @param  
 	void Toggle_Crouch(CTRPluginFramework::MenuEntry*);

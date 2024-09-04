@@ -210,6 +210,18 @@ FONT_DU+FONT_L+": Chara Mario\n"+
         );
 
         *playing += new MenuEntry(
+            "Disable Jump",
+            SMM3DS::ptr_JumpDisable,
+            "Disable Jump while enable this code"
+        );
+
+        *playing += new MenuEntry(
+            "Disable Crouching",
+            SMM3DS::ptr_CrouchDisable,
+            "Disable Crouching while enable this code"
+        );
+
+        *playing += new MenuEntry(
             "Toggle Crouch",
             nullptr,
             SMM3DS::Toggle_Crouch

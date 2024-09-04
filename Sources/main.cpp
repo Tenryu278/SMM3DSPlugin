@@ -301,6 +301,11 @@ FONT_DU+FONT_L+": Chara Mario\n"+
             SMM3DS::Editor_SaveTime,
             "It will works when started course after enable this cheat"
         );
+
+        *editor += new MenuEntry(
+            "Disable limits of parts",
+            SMM3DS::Editor_Parts_NoLimit
+        );
         
         /*root*/
 

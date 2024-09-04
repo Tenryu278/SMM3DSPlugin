@@ -650,6 +650,17 @@ WMstatus:
 		}
 	}
 
+	void Editor_Parts_NoLimit(MenuEntry*)
+	{
+		 /* enemy/item/block/arrow/checkpoint/keycoin/platform/door/bowser */
+		u32 offs = 0x305ABA58;
+		for (u32 i = 0; i < 9*4; i+=4)
+		{
+			Process::Write32(offs+i, 0); //main world
+			Process::Write32(offs+i+0xA7C, 0); //sub world
+		}
+	}
+
 
 	bool GetGameSkin(GameSkin &result)
 	{

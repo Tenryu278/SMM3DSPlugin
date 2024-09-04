@@ -306,6 +306,8 @@ namespace SMM3DS
 
 
 	void Editor_SaveTime(CTRPluginFramework::MenuEntry*);
+
+	void Editor_Parts_NoLimit(CTRPluginFramework::MenuEntry*);
 	
 
 	/// @brief Read the current game skin. This is incomplete

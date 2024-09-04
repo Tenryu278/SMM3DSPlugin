@@ -171,6 +171,32 @@ namespace SMM3DS
 		
 	}
 
+
+	u8 sceneSkin_TiBGM;
+
+	void SetSceneSkin_TiBGM(CTRPluginFramework::MenuEntry* entry)
+	{
+		u8 current, result;
+		Process::Read8(0x305A1010, current);
+		if (_SetSceneSkin(result, current))
+		{
+			sceneSkin_TiBGM = result;
+			entry->SetGameFunc(KeepSceneSkin_TiBGM);
+			entry->Enable();
+		}
+		else
+		{
+			entry->SetGameFunc(nullptr);
+			entry->Disable();
+		}
+	}
+
+	void KeepSceneSkin_TiBGM(CTRPluginFramework::MenuEntry*)
+	{
+		Process::Write8(0x305A1010, sceneSkin_TiBGM);
+	}
+
+
 	u8 footsteps;
 
 	void SetFootSteps(MenuEntry* entry)

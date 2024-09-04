@@ -123,6 +123,13 @@ exit:
         );
 
         *folders[0] += new MenuEntry(
+            "Change Scene Skin(Tile and BGM only)",
+            nullptr,
+            SMM3DS::SetSceneSkin_TiBGM,
+            Color::Blue<<"Note: Process will be slow while enable this cheat"
+        );
+
+        *folders[0] += new MenuEntry(
             "Change footsteps",
             nullptr,
             SMM3DS::SetFootSteps,

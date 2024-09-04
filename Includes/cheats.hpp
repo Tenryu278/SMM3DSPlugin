@@ -116,6 +116,10 @@ namespace SMM3DS
 	/// @param  
 	void SetSceneSkin(CTRPluginFramework::MenuEntry*);
 
+	void SetSceneSkin_TiBGM(CTRPluginFramework::MenuEntry*);
+
+	void KeepSceneSkin_TiBGM(CTRPluginFramework::MenuEntry*);
+
 
 	/// @brief Set FootSteps
 	/// @param  

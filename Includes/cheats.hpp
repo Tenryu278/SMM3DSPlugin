@@ -193,17 +193,17 @@ namespace SMM3DS
 
 	/// @brief Mario always jumping while enable this code
 	/// @param  
-	void AutoJump(CTRPluginFramework::MenuEntry*);
+	void ptr_JumpAuto(CTRPluginFramework::MenuEntry*);
 
 
 	/// @brief 
 	/// @param  
-	void ForceCrouch(CTRPluginFramework::MenuEntry*);
+	void ptr_CourchForce(CTRPluginFramework::MenuEntry*);
 
 
 	/// @brief 
 	/// @param  
-	void MidAirCrouch(CTRPluginFramework::MenuEntry*);
+	void ptr_JumpMD_Crouch(CTRPluginFramework::MenuEntry*);
 
 
 	void ptr_JumpDisable(CTRPluginFramework::MenuEntry*);

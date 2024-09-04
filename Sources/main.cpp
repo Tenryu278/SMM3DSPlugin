@@ -193,19 +193,19 @@ FONT_DU+FONT_L+": Chara Mario\n"+
 
         *playing += new MenuEntry(
             "AutoJump", 
-            SMM3DS::AutoJump, 
+            SMM3DS::ptr_JumpAuto, 
             "Mario always jumping while enable this code"
         );
 
         *playing += new MenuEntry(
             "ForceCrouch",
-            SMM3DS::ForceCrouch,
+            SMM3DS::ptr_CourchForce,
             "Mario always crouching while enable this code"
         );
 
         *playing += new MenuEntry(
             "MidAir Crouch Jump",
-            SMM3DS::MidAirCrouch,
+            SMM3DS::ptr_JumpMD_Crouch,
             "You can jump in mid air but any jumps will be with crouching while enable this code"
         );
 

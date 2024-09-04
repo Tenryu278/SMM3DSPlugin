@@ -412,22 +412,22 @@ WMstatus:
 	}
 
 
-	void AutoJump(MenuEntry*)
+	void ptr_JumpAuto(MenuEntry*)
 	{
 		Process::Write32(0x317B9DEC, 0x317D7820);
 	}
 
 
-	void ForceCrouch(MenuEntry*)
+	void ptr_CourchForce(MenuEntry*)
 	{
 		Process::Write32(0x317B9DF0, 0x317D78B0);
 		Process::Write32(0x317B9DEC, 0x317D7890);
 	}
 
 
-	void MidAirCrouch(MenuEntry*)
+	void ptr_JumpMD_Crouch(MenuEntry*)
 	{
-		Process::Write16(0x317B9DDC, 0x78A0);
+		Process::Write32(0x317B9DDC, 0x317D78A0);
 	}
 
 

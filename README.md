@@ -50,14 +50,52 @@ The TitleID of SMM3DS is:
 see more [3dsdb](https://3dsdb.com/)
 
 # Build
-1. Install devkitARM and [libctru](https://github.com/devkitPro/libctru) following [the devkitpro wiki](https://devkitpro.org/wiki/Getting_Started).
 
-2. Install latest [3gxtool](https://gitlab.com/thepixellizeross/3gxtool) and [libctrpf](https://gitlab.com/thepixellizeross/ctrpluginframework) on your devkitpro directory.
+## Windows
+1. Install msys2, devkitARM, and [libctru](https://github.com/devkitPro/libctru) following [the devkitpro wiki](https://devkitpro.org/wiki/Getting_Started).
 
-3. Run `make` command on the repository.
+2. To add custom packages, Open `/etc/pacman.conf` and add elements to end of file.
+```
+[thepixellizeross-lib]
+Server = https://thepixellizeross.gitlab.io/packages/any
+SigLevel = Optional
+
+[thepixellizeross-win]
+Server = https://thepixellizeross.gitlab.io/packages/x86_64/win
+SigLevel = Optional
+```
+
+3. Launch MSys2 and run command:
+```
+pacman -Syu libctrpf 3gxtool
+```
+
+4. Run `make` command on the directory containing [Makefile](Makefile).
+
+## Linux
+> Building on Linux has not been tested
+
+1. Install pacman, devkitARM, and [libctru](https://github.com/devkitPro/libctru) following [the devkitpro wiki](https://devkitpro.org/wiki/Getting_Started).
+
+2. To add custom packages, Open `/etc/pacman.conf` and add elements to end of file.
+```
+[thepixellizeross-lib]
+Server = https://thepixellizeross.gitlab.io/packages/any
+SigLevel = Optional
+```
+
+3. Launch terminal and run command:
+```
+pacman -Syu libctrpf
+```
+
+4. Get [3gxtool(linux build)](https://gitlab.com/thepixellizeross/3gxtool/-/releases) and put to the directory in PATH.
+
+5. Run `make` command on the directory containing [Makefile](Makefile).
+
 
 # [ftpd.py](ftpd.py)
-This file is use for install plugin to 3ds via [ftpd](https://github.com/mtheall/ftpd). 
+This file is use for install plugin to 3ds via [ftpd](https://github.com/mtheall/ftpd).
 
 To set IP address and Port number, create `IP_PORT.txt` on top directory and write them by 2 lines.
 

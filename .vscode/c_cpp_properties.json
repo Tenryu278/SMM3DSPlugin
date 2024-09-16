@@ -1,16 +1,14 @@
 {
     "configurations": [
         {
-            "name": "Win32",
+            "name": "CTRPF",
             "includePath": [
                 "${workspaceFolder}/Includes/**",
                 "C:\\devkitPro\\libctrpf\\include",
                 "C:\\devkitPro\\libctru\\include"
             ],
             "defines": [
-                "_DEBUG",
-                "UNICODE",
-                "_UNICODE"
+                "__3DS__"
             ],
             "browse": {
                 "path": [

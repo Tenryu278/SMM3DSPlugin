@@ -355,7 +355,7 @@ FONT_DU+FONT_L+": Chara Mario\n"+
     {
         PluginMenu* menu = new PluginMenu(
             "SMM3DS v1.05",
-             0, 1, 0, 
+             0, 1, 1, 
 R"(Super Mario Maker for Nintendo 3DS (v1.05) Plugin
 
 This software is licensed under MIT

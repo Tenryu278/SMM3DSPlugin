@@ -33,13 +33,13 @@ jobs:
       run: make
       
     - name: Upload Plugin
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: Plugin 3GX File
         path: SMM3DSPlugin.3gx
     
     - name: Upload Plugin ELF
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: Plugin ELF File
         path: SMM3DSPlugin.elf

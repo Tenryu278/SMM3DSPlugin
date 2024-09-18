@@ -311,6 +311,46 @@ FONT_DU+FONT_L+": Chara Mario\n"+
 
 	}
 
+    void DeinitFolder(MenuFolder *folder)
+    {
+        if (folder==nullptr)
+            return;
+
+        std::vector<MenuEntry*> entries = folder->GetEntryList();
+        for (size_t i = 0; i < entries.size(); i++)
+        {
+            delete entries[i];
+            entries[i] = nullptr;
+        }
+
+        std::vector<MenuFolder*> folders = folder->GetFolderList();
+        for (size_t i = 0; i < entries.size(); i++)
+            DeinitFolder(folders[i]);
+
+        delete folder;
+        folder = nullptr;
+    }
+
+    void DeinitMenu(PluginMenu *menu)
+    {
+        if (menu==nullptr)
+            return;
+        
+        std::vector<MenuEntry*> entries = menu->GetEntryList();
+        for (size_t i = 0; i < entries.size(); i++)
+        {
+            delete entries[i];
+            entries[i] = nullptr;
+        }
+        
+        std::vector<MenuFolder*> folders = menu->GetFolderList();
+        for (size_t i = 0; i < entries.size(); i++)
+            DeinitFolder(folders[i]);
+
+        delete menu;
+        menu = nullptr;
+    }
+
     int main(void)
     {
         PluginMenu* menu = new PluginMenu(
@@ -345,7 +385,8 @@ Copyright (c) 2024 Tenryu278)"
         // Launch menu and mainloop
         menu->Run();
 
-        delete menu;
+        // Delete menu, folders, entries
+        DeinitMenu(menu);
 
         // Exit plugin
         return (0);
